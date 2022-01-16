@@ -10,6 +10,7 @@ use App\Http\Controllers\LockScreenController;
 use App\Http\Controllers\UserStatusController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\PortfolioSettingController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Portfolio\PortfolioSkillController;
 use App\Http\Controllers\Portfolio\PortfolioClientController;
@@ -181,6 +182,26 @@ Route::prefix('admin')->group(function () {
          *
          */
         Route::prefix('portfolio')->group(function () {
+
+
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Settings Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('settings')->group(function () {
+                Route::get('/', [PortfolioSettingController::class, 'index'])->name('admin.portfolio.settings.index');
+                Route::get('/{portfolioSetting}/move-up', [PortfolioSettingController::class, 'move_up'])->name('admin.portfolio.settings.moveUp');
+                Route::get('/{portfolioSetting}/move-down', [PortfolioSettingController::class, 'move_down'])->name('admin.portfolio.settings.moveDown');
+                Route::post('/', [PortfolioSettingController::class, 'store'])->name('admin.portfolio.settings.store');
+                Route::put('/', [PortfolioSettingController::class, 'update'])->name('admin.portfolio.settings.update');
+                Route::delete('/{portfolioSetting}/delete', [PortfolioSettingController::class, 'destroy'])->name('admin.portfolio.settings.delete');
+                Route::get('/{portfolioSetting}/unset-value', [PortfolioSettingController::class, 'unsetValue'])->name('admin.portfolio.settings.unsetValue');
+            }); //end settings group
 
             /**
              *

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Portfolio\PortfolioSetting;
 use Illuminate\Support\Facades\Storage;
 
 if (!function_exists('setting')) {
@@ -214,5 +215,18 @@ if (!function_exists('upload_image')) {
             return  $request->$fileName->store($folderName);
         }
         return $oldImage;
+    }
+}
+
+if (!function_exists('portfolio_setting')) {
+
+    function portfolio_setting($key, $default = null)
+    {
+        $portfolioSettings = PortfolioSetting::cacheData();
+
+        $portfolioSetting = $portfolioSettings->where('key', $key)->first();
+
+        if ($portfolioSetting) return $portfolioSetting->value;
+        return $default;
     }
 }

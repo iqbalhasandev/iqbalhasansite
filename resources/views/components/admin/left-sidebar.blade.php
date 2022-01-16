@@ -108,6 +108,12 @@
                     <span></span>
                     <span>Testimonial Managment</span>
                 </x-admin-nav-link>
+                {{-- Setting--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.settings.index') }}">
+                    <i class="fas fa-cog"></i>
+                    <span></span>
+                    <span>Portfolio Setting</span>
+                </x-admin-nav-link>
                 @endcan
                 {{-----------------------------------------------------------
                 ---------------- Portfolio Managment End ---------------
