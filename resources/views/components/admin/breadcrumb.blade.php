@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="{{ isset($rightContent)?'col-sm-6':'col-sm-12' }}">
-                <div class="page-title">
+                <div class="page-title text-capitalize">
                     @isset($title)
                     <h4>{{ $title }}</h4>
                     @endisset
@@ -14,7 +14,7 @@
             </div>
             @isset($rightContent)
             <div class="col-sm-6">
-                <div class="float-end d-none d-sm-block">
+                <div class="float-end d-none d-sm-block text-capitalize">
                     {{ $rightContent }}
                 </div>
             </div>

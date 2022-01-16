@@ -1,7 +1,6 @@
 <?php
 
-
-
+use Illuminate\Support\Facades\Storage;
 
 if (!function_exists('setting')) {
     function setting($key, $default = null)
@@ -191,5 +190,29 @@ if (!function_exists('config_set')) {
         } else {
             Illuminate\Support\Facades\Config::set($name, $data);
         }
+    }
+}
+
+if (!function_exists('upload_asset')) {
+
+    function upload_asset($path)
+    {
+        return asset('storage/' . $path);
+    }
+}
+
+if (!function_exists('upload_image')) {
+
+    function upload_image($request, $fileName, $folderName, $oldImage = false)
+    {
+
+        if ($request->has($fileName)) {
+            $request->validate([
+                $fileName => ['required', 'image'],
+            ]);
+            if ($oldImage) Storage::delete($oldImage);
+            return  $request->$fileName->store($folderName);
+        }
+        return $oldImage;
     }
 }

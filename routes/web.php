@@ -1,16 +1,23 @@
 <?php
 
+use App\Models\UserStatus;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LockScreenController;
+use App\Http\Controllers\UserStatusController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\Setting\SettingController;
-use App\Http\Controllers\UserStatusController;
-use App\Models\UserStatus;
-use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Portfolio\PortfolioSkillController;
+use App\Http\Controllers\Portfolio\PortfolioClientController;
+use App\Http\Controllers\Portfolio\PortfolioGalleryController;
+use App\Http\Controllers\Portfolio\PortfolioServiceController;
+use App\Http\Controllers\Portfolio\PortfolioEducationController;
+use App\Http\Controllers\Portfolio\PortfolioExpertiseController;
+use App\Http\Controllers\Portfolio\PortfolioTestimonialController;
 
 require_once __DIR__ . '/jetstream.php';
 /*
@@ -164,6 +171,143 @@ Route::prefix('admin')->group(function () {
             Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('admin.user.delete');
             Route::post('{user}/status-update', [UserController::class, 'statusUpdate'])->name('user.statusUpdate');
         }); //end user route group
+
+        /**
+         *
+         *
+         * ----------------------------------------------------------
+         *                   Portfolio Management
+         * ----------------------------------------------------------
+         *
+         */
+        Route::prefix('portfolio')->group(function () {
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Client Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/client')->group(function () {
+                Route::get('/', [PortfolioClientController::class, 'index'])->name('admin.portfolio.client.index');
+                Route::get('/create', [PortfolioClientController::class, 'create'])->name('admin.portfolio.client.create');
+                Route::post('/create', [PortfolioClientController::class, 'store'])->name('admin.portfolio.client.store');
+                Route::get('/{portfolioClient}', [PortfolioClientController::class, 'show'])->name('admin.portfolio.client.show');
+                Route::get('/{portfolioClient}/edit', [PortfolioClientController::class, 'edit'])->name('admin.portfolio.client.edit');
+                Route::put('/{portfolioClient}/edit', [PortfolioClientController::class, 'update'])->name('admin.portfolio.client.update');
+                Route::delete('/{portfolioClient}/delete', [PortfolioClientController::class, 'destroy'])->name('admin.portfolio.client.delete');
+            }); //end portfolio client route group
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Education Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/education')->group(function () {
+                Route::get('/', [PortfolioEducationController::class, 'index'])->name('admin.portfolio.education.index');
+                Route::get('/create', [PortfolioEducationController::class, 'create'])->name('admin.portfolio.education.create');
+                Route::post('/create', [PortfolioEducationController::class, 'store'])->name('admin.portfolio.education.store');
+                Route::get('/{portfolioEducation}', [PortfolioEducationController::class, 'show'])->name('admin.portfolio.education.show');
+                Route::get('/{portfolioEducation}/edit', [PortfolioEducationController::class, 'edit'])->name('admin.portfolio.education.edit');
+                Route::put('/{portfolioEducation}/edit', [PortfolioEducationController::class, 'update'])->name('admin.portfolio.education.update');
+                Route::delete('/{portfolioEducation}/delete', [PortfolioEducationController::class, 'destroy'])->name('admin.portfolio.education.delete');
+            }); //end portfolio education route group
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Expertise Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/expertise')->group(function () {
+                Route::get('/', [PortfolioExpertiseController::class, 'index'])->name('admin.portfolio.expertise.index');
+                Route::get('/create', [PortfolioExpertiseController::class, 'create'])->name('admin.portfolio.expertise.create');
+                Route::post('/create', [PortfolioExpertiseController::class, 'store'])->name('admin.portfolio.expertise.store');
+                Route::get('/{portfolioExpertise}', [PortfolioExpertiseController::class, 'show'])->name('admin.portfolio.expertise.show');
+                Route::get('/{portfolioExpertise}/edit', [PortfolioExpertiseController::class, 'edit'])->name('admin.portfolio.expertise.edit');
+                Route::put('/{portfolioExpertise}/edit', [PortfolioExpertiseController::class, 'update'])->name('admin.portfolio.expertise.update');
+                Route::delete('/{portfolioExpertise}/delete', [PortfolioExpertiseController::class, 'destroy'])->name('admin.portfolio.expertise.delete');
+            }); //end portfolio expertise route group
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Expertise Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/gallery')->group(function () {
+                Route::get('/', [PortfolioGalleryController::class, 'index'])->name('admin.portfolio.gallery.index');
+                Route::get('/create', [PortfolioGalleryController::class, 'create'])->name('admin.portfolio.gallery.create');
+                Route::post('/create', [PortfolioGalleryController::class, 'store'])->name('admin.portfolio.gallery.store');
+                Route::get('/{portfolioGallery}', [PortfolioGalleryController::class, 'show'])->name('admin.portfolio.gallery.show');
+                Route::get('/{portfolioGallery}/edit', [PortfolioGalleryController::class, 'edit'])->name('admin.portfolio.gallery.edit');
+                Route::put('/{portfolioGallery}/edit', [PortfolioGalleryController::class, 'update'])->name('admin.portfolio.gallery.update');
+                Route::delete('/{portfolioGallery}/delete', [PortfolioGalleryController::class, 'destroy'])->name('admin.portfolio.gallery.delete');
+            }); //end portfolio expertise route group
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Service Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/service')->group(function () {
+                Route::get('/', [PortfolioServiceController::class, 'index'])->name('admin.portfolio.service.index');
+                Route::get('/create', [PortfolioServiceController::class, 'create'])->name('admin.portfolio.service.create');
+                Route::post('/create', [PortfolioServiceController::class, 'store'])->name('admin.portfolio.service.store');
+                Route::get('/{portfolioService}', [PortfolioServiceController::class, 'show'])->name('admin.portfolio.service.show');
+                Route::get('/{portfolioService}/edit', [PortfolioServiceController::class, 'edit'])->name('admin.portfolio.service.edit');
+                Route::put('/{portfolioService}/edit', [PortfolioServiceController::class, 'update'])->name('admin.portfolio.service.update');
+                Route::delete('/{portfolioService}/delete', [PortfolioServiceController::class, 'destroy'])->name('admin.portfolio.service.delete');
+            }); //end portfolio expertise route group
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Skill Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/skill')->group(function () {
+                Route::get('/', [PortfolioSkillController::class, 'index'])->name('admin.portfolio.skill.index');
+                Route::get('/create', [PortfolioSkillController::class, 'create'])->name('admin.portfolio.skill.create');
+                Route::post('/create', [PortfolioSkillController::class, 'store'])->name('admin.portfolio.skill.store');
+                Route::get('/{portfolioSkill}', [PortfolioSkillController::class, 'show'])->name('admin.portfolio.skill.show');
+                Route::get('/{portfolioSkill}/edit', [PortfolioSkillController::class, 'edit'])->name('admin.portfolio.skill.edit');
+                Route::put('/{portfolioSkill}/edit', [PortfolioSkillController::class, 'update'])->name('admin.portfolio.skill.update');
+                Route::delete('/{portfolioSkill}/delete', [PortfolioSkillController::class, 'destroy'])->name('admin.portfolio.skill.delete');
+            }); //end portfolio skill route group
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Testimonial Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/testimonial')->group(function () {
+                Route::get('/', [PortfolioTestimonialController::class, 'index'])->name('admin.portfolio.testimonial.index');
+                Route::get('/create', [PortfolioTestimonialController::class, 'create'])->name('admin.portfolio.testimonial.create');
+                Route::post('/create', [PortfolioTestimonialController::class, 'store'])->name('admin.portfolio.testimonial.store');
+                Route::get('/{portfolioTestimonial}', [PortfolioTestimonialController::class, 'show'])->name('admin.portfolio.testimonial.show');
+                Route::get('/{portfolioTestimonial}/edit', [PortfolioTestimonialController::class, 'edit'])->name('admin.portfolio.testimonial.edit');
+                Route::put('/{portfolioTestimonial}/edit', [PortfolioTestimonialController::class, 'update'])->name('admin.portfolio.testimonial.update');
+                Route::delete('/{portfolioTestimonial}/delete', [PortfolioTestimonialController::class, 'destroy'])->name('admin.portfolio.testimonial.delete');
+            }); //end portfolio testimonial route group
+
+        });
+
+
 
 
         /**

@@ -60,6 +60,60 @@
                 </x-admin-nav-link>
                 @endcan
                 @endif
+                {{-----------------------------------------------------------
+                ---------------- Portfolio Managment Start ---------------
+                -------------------------------------------------------------}}
+                @can('portfolio_management')
+                {{--Users --}}
+                <x-admin-nav-link title="Portfolio Mangment" />
+                {{-- Client --}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.client.index') }}">
+                    <i class="fas fa-user-ninja"></i>
+                    <span></span>
+                    <span>Client Managment</span>
+                </x-admin-nav-link>
+                {{-- Education--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.education.index') }}">
+                    <i class="fas fa-user-graduate"></i>
+                    <span></span>
+                    <span>Education Managment</span>
+                </x-admin-nav-link>
+                {{-- Expertis--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.expertise.index') }}">
+                    <i class="fas fa-sign"></i>
+                    <span></span>
+                    <span>Expertis Managment</span>
+                </x-admin-nav-link>
+                {{-- Gallery--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.gallery.index') }}">
+                    <i class="fas fa-images"></i>
+                    <span></span>
+                    <span>Gallery Managment</span>
+                </x-admin-nav-link>
+                {{-- Services--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.service.index') }}">
+                    <i class="far fa-building"></i>
+                    <span></span>
+                    <span>Service Managment</span>
+                </x-admin-nav-link>
+                {{-- Skill--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.skill.index') }}">
+                    <i class="fab fa-cloudsmith"></i>
+                    <span></span>
+                    <span>Skill Managment</span>
+                </x-admin-nav-link>
+                {{-- Testimonial--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.testimonial.index') }}">
+                    <i class="far fa-address-card"></i>
+                    <span></span>
+                    <span>Testimonial Managment</span>
+                </x-admin-nav-link>
+                @endcan
+                {{-----------------------------------------------------------
+                ---------------- Portfolio Managment End ---------------
+                -------------------------------------------------------------}}
+
+
                 {{--Setting --}}
                 @if(can('setting_management'))
                 <x-admin-nav-link title="Tools" />

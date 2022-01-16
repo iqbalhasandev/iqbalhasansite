@@ -57,7 +57,7 @@ trait WithCache
      */
     public static function cacheDataQuery($cacheKey, $query)
     {
-        return Cache::rememberForever(self::$cacheKey . $cacheKey, function ($query) {
+        return Cache::rememberForever(self::$cacheKey . $cacheKey, function () use ($query) {
             return $query;
         });
     }
@@ -67,6 +67,13 @@ trait WithCache
      */
     public static function forgetCache($cacheKey = null)
     {
+        if (isset(self::$cacheKeys)) {
+
+            foreach (self::$cacheKeys as $key) {
+                Cache::forget(self::$cacheKey . $key);
+            }
+        }
+
         Cache::forget(self::$cacheKey);
         Cache::forget(self::$cacheKey . '_latest_');
         Cache::forget(self::$cacheKey . '_first_');
