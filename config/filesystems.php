@@ -73,6 +73,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('portfolio-assets') => resource_path('assets/portfolio-assets'),
         public_path('admin-assets') => resource_path('assets/admin-assets'),
         public_path('font-assets') => resource_path('assets/font-assets'),
     ],

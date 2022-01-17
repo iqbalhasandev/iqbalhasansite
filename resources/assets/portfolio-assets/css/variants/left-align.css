@@ -1,0 +1,51 @@
+/*!
+ * Item: iqbalhasan.dev 
+ * Description: Personal Portfolio HTML5 Template
+ * Author/Developer: IQBAL HASAN 
+ * Author/Developer URL: https://iqbalhasan.dev
+ * Version: v1.0.0
+ */
+
+.header-area .greet {
+    margin-bottom: 20px
+}
+
+.header-area .skills {
+    margin-bottom: 22px
+}
+
+.header-area .description {
+    margin-bottom: 22px
+}
+
+.header-area .btn {
+    margin: 0 9px 0 0
+}
+
+@media (max-width:575.98px) {
+    .header-area .skills {
+        font-size: 40px
+    }
+    .header-area .btn {
+        margin: 0 9px 12px 0
+    }
+}
+
+@media (max-width:1199.98px) {
+    .header-area .greet {
+        margin-bottom: 18px
+    }
+    .header-area .skills {
+        margin-bottom: 20px;
+        font-size: 44px
+    }
+    .header-area .description {
+        margin-bottom: 20px
+    }
+}
+
+@media (min-width:320px) and (max-width:375px) {
+    .header-area .skills {
+        font-size: 32px
+    }
+}

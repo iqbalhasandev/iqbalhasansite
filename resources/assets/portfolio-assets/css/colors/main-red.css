@@ -1,0 +1,23 @@
+/*!
+ * Item: iqbalhasan.dev 
+ * Description: Personal Portfolio HTML5 Template
+ * Author/Developer: IQBAL HASAN 
+ * Author/Developer URL: https://iqbalhasan.dev
+ * Version: v1.0.0
+ */
+
+
+
+:root {
+    --primary: rgb(220, 53, 70);
+    --seconder: rgb(189, 33, 49);
+    --three: rgb(248, 214, 217);
+    --four: rgb(244, 192, 197);
+    --boxShadow: rgba(220, 53, 69, .5);
+
+    --primary-hover: rgba(207, 44, 60, 0.911);
+    --seconder-hover: rgba(161, 28, 41, 0.897);
+    --three-hover: rgba(243, 197, 200, 0.932);
+    --four-hover: rgba(231, 181, 186, 0.938);
+    --white: #fff;
+}

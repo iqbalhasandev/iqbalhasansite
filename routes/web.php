@@ -4,18 +4,19 @@ use App\Models\UserStatus;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LockScreenController;
 use App\Http\Controllers\UserStatusController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\PortfolioSettingController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Portfolio\PortfolioSkillController;
 use App\Http\Controllers\Portfolio\PortfolioClientController;
 use App\Http\Controllers\Portfolio\PortfolioGalleryController;
 use App\Http\Controllers\Portfolio\PortfolioServiceController;
+use App\Http\Controllers\Portfolio\PortfolioSettingController;
 use App\Http\Controllers\Portfolio\PortfolioEducationController;
 use App\Http\Controllers\Portfolio\PortfolioExpertiseController;
 use App\Http\Controllers\Portfolio\PortfolioTestimonialController;
@@ -32,7 +33,7 @@ require_once __DIR__ . '/jetstream.php';
 |
 */
 
-Route::get('/', [DashboardController::class, 'redirect']);
+Route::get('/', [PortfolioController::class, 'index']);
 
 
 Route::get('/test', function () {

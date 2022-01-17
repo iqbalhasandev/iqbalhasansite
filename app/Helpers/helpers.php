@@ -52,6 +52,13 @@ if (!function_exists('admin_asset')) {
         return app('url')->asset($path);
     }
 }
+if (!function_exists('portfolio_asset')) {
+    function portfolio_asset($file = null)
+    {
+        $path = 'portfolio-assets/' . $file;
+        return app('url')->asset($path);
+    }
+}
 if (!function_exists('can')) {
 
     function can($permission)
