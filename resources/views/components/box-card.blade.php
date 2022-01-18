@@ -19,7 +19,7 @@
                         {{ $footer }}
                     </div>
                     @endisset
-                    <x-admin.auth-footer class="text-white" />
+                    <x-admin.auth-footer class="text-black" />
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-auth-layout>
     <x-auth-card>
         <x-slot name="title">
             <h5 class="text-primary mb-2 mt-4">Welcome Back !</h5>
@@ -58,4 +58,4 @@
             @endif
         </x-slot>
     </x-auth-card>
-</x-guest-layout>
+</x-auth-layout>

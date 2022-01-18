@@ -31,6 +31,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+
         // seo
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
@@ -90,6 +91,49 @@ class PortfolioController extends Controller
 
         // flash message
         Session::flash('success', 'Successfully Stored Your Contact Data.');
-        // return \redirect()->route(\config('theme.cdata.route-name-prefix') . '.index');
+        return \view('portfolio.contact-success');
+    }
+
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function privacyPolicy()
+    {
+        // seo
+        $this->seo()->setTitle(config('theme.cdata.title'));
+        $this->seo()->setDescription(\config('theme.cdata.description'));
+        $gallery = new PortfolioGallery;
+        return \view('portfolio.index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function faq()
+    {
+        // seo
+        $this->seo()->setTitle(config('theme.cdata.title'));
+        $this->seo()->setDescription(\config('theme.cdata.description'));
+        $gallery = new PortfolioGallery;
+        return \view('portfolio.index');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function reportIssue()
+    {
+        // seo
+        $this->seo()->setTitle(config('theme.cdata.title'));
+        $this->seo()->setDescription(\config('theme.cdata.description'));
+        $gallery = new PortfolioGallery;
+        return \view('portfolio.index');
     }
 }

@@ -114,6 +114,12 @@
                     <span></span>
                     <span>Contact Managment</span>
                 </x-admin-nav-link>
+                {{-- Testimonial--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.page-builder.index') }}">
+                    <i class="far fa-building"></i>
+                    <span></span>
+                    <span>Page Builder</span>
+                </x-admin-nav-link>
                 {{-- Setting--}}
                 <x-admin-nav-link href="{{ route('admin.portfolio.settings.index') }}">
                     <i class="fas fa-cog"></i>

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Portfolio\PortfolioController;
 use App\Http\Controllers\Admin\Setting\SettingController;
+use App\Http\Controllers\Portfolio\PageBuilderController;
 use App\Http\Controllers\Portfolio\PortfolioSkillController;
 use App\Http\Controllers\Portfolio\PortfolioClientController;
 use App\Http\Controllers\Portfolio\PortfolioContactController;
@@ -36,7 +37,12 @@ require_once __DIR__ . '/jetstream.php';
 */
 
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio');
-Route::post('/', [PortfolioController::class, 'contactStore'])->name('portfolio.contact.store');
+Route::post('/contact-submit', [PortfolioController::class, 'contactStore'])->name('portfolio.contact.store');
+Route::get('terms-condition', [PortfolioController::class, 'termsCondition'])->name('portfolio.termsCondition');
+Route::get('privacy-policy', [PortfolioController::class, 'privacyPolicy'])->name('portfolio.privacyPolicy');
+Route::get('faq', [PortfolioController::class, 'faq'])->name('portfolio.faq');
+Route::get('report-issue', [PortfolioController::class, 'reportIssue'])->name('portfolio.reportIssue');
+Route::get('page/{pageBuilder}', [PageBuilderController::class, 'show'])->name('portfolio.page-builder.show');
 
 
 // Route::get('/test', function () {
@@ -349,6 +355,23 @@ Route::prefix('admin')->group(function () {
                 Route::put('/{portfolioTestimonial}/edit', [PortfolioTestimonialController::class, 'update'])->name('admin.portfolio.testimonial.update');
                 Route::delete('/{portfolioTestimonial}/delete', [PortfolioTestimonialController::class, 'destroy'])->name('admin.portfolio.testimonial.delete');
             }); //end portfolio testimonial route group
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Expertise Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/page-builder')->group(function () {
+                Route::get('/', [PageBuilderController::class, 'index'])->name('admin.portfolio.page-builder.index');
+                Route::get('/create', [PageBuilderController::class, 'create'])->name('admin.portfolio.page-builder.create');
+                Route::post('/create', [PageBuilderController::class, 'store'])->name('admin.portfolio.page-builder.store');
+                Route::get('/{pageBuilder}/edit', [PageBuilderController::class, 'edit'])->name('admin.portfolio.page-builder.edit');
+                Route::put('/{pageBuilder}/edit', [PageBuilderController::class, 'update'])->name('admin.portfolio.page-builder.update');
+                Route::delete('/{pageBuilder}/delete', [PageBuilderController::class, 'destroy'])->name('admin.portfolio.page-builder.delete');
+            }); //end portfolio expertise route group
 
         });
 
