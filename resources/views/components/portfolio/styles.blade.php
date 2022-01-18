@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="{{ portfolio_asset('css/hamburgers-custom.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/lity.min.css')}}">
 <!-- <link rel="stylesheet" href="{{ portfolio_asset('css/owl.carousel.min.css')}}"> -->
+<!-- toastr Css -->
+<link rel="stylesheet" href="{{admin_asset('libs/toastr/toastr.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/swiper.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/owl.theme.default.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/main.css')}}">

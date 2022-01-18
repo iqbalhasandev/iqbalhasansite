@@ -13,6 +13,7 @@
 <!-- <script src="{{ portfolio_asset('js/owl.carousel.min.js') }}"></script> -->
 <script src="{{ portfolio_asset('js/swiper.min.js') }}"></script>
 <script src="{{ portfolio_asset('assets/js/wow.js') }}"></script>
+<script src="{{admin_asset('libs/toastr/toastr.min.js')}}"></script>
 
 <script src="{{ portfolio_asset('js/main.js') }}"></script>
 <script src="{{ portfolio_asset('js/custom.js') }}"></script>

@@ -225,6 +225,22 @@ if (!function_exists('upload_image')) {
     }
 }
 
+if (!function_exists('upload_file')) {
+
+    function upload_file($request, $fileName, $folderName, $oldFile = false)
+    {
+
+        if ($request->has($fileName)) {
+            $request->validate([
+                $fileName => ['required'],
+            ]);
+            if ($oldFile) Storage::delete($oldFile);
+            return  $request->$fileName->store($folderName);
+        }
+        return $oldFile;
+    }
+}
+
 if (!function_exists('portfolio_setting')) {
 
     function portfolio_setting($key, $default = null)

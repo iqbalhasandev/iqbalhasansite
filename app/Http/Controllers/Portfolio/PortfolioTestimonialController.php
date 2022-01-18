@@ -17,7 +17,8 @@ class PortfolioTestimonialController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth', 'permission:user_permission_management']);
+        $this->middleware(['auth', 'permission:portfolio_management']);
+
 
         \config_set('theme.cdata', [
             'title' => 'Portfolio Testimonial Table',

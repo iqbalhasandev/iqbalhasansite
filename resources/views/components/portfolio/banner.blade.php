@@ -4,7 +4,7 @@
         ========================================================-->
 
 <section class="header-area section-fixed-bg section-overlay-bg" id="header-area"
-    style="background-image: url({{ portfolio_asset('img/header-area.jpg') }}); background-size: cover;">
+    style="background-image: url({{ portfolio_setting('banner.image')?storage_asset(portfolio_setting('banner.image')):portfolio_asset('img/header-area.jpg') }}); background-size: cover;">
     <div id="particles-js"></div>
 
     @switch($variant)
@@ -17,7 +17,7 @@
         text-center
         @else
         text-left
-        @endif">">
+        @endif">
                 <x-portfolio.banner.content />
             </div>
             <x-portfolio.banner.wheel />
@@ -26,7 +26,7 @@
     <x-portfolio.banner.wheel />
     @break
     @case('nexus')
-    <div class="container h-100">
+    <div class=" container h-100">
         <div class="row h-100 align-items-center @if($aligment=='center')
         justify-content-center
         @endif
@@ -35,7 +35,7 @@
         text-center
         @else
         text-left
-        @endif">">
+        @endif">
                 <x-portfolio.banner.content />
             </div>
             <x-portfolio.banner.wheel />
@@ -73,7 +73,7 @@
         text-center
         @else
         text-left
-        @endif">">
+        @endif">
                 <x-portfolio.banner.content />
             </div>
         </div>
@@ -92,7 +92,7 @@
         text-center
         @else
         text-left
-        @endif">">
+        @endif">
                 <x-portfolio.banner.content />
             </div>
             <x-portfolio.banner.wheel />

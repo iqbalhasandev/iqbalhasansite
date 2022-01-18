@@ -1,25 +1,27 @@
 <?php
 
-use App\Models\UserStatus;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LockScreenController;
 use App\Http\Controllers\UserStatusController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Portfolio\PortfolioController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Portfolio\PortfolioSkillController;
 use App\Http\Controllers\Portfolio\PortfolioClientController;
+use App\Http\Controllers\Portfolio\PortfolioContactController;
 use App\Http\Controllers\Portfolio\PortfolioGalleryController;
 use App\Http\Controllers\Portfolio\PortfolioServiceController;
 use App\Http\Controllers\Portfolio\PortfolioSettingController;
 use App\Http\Controllers\Portfolio\PortfolioEducationController;
 use App\Http\Controllers\Portfolio\PortfolioExpertiseController;
 use App\Http\Controllers\Portfolio\PortfolioTestimonialController;
+
+
 
 require_once __DIR__ . '/jetstream.php';
 /*
@@ -33,17 +35,18 @@ require_once __DIR__ . '/jetstream.php';
 |
 */
 
-Route::get('/', [PortfolioController::class, 'index']);
+Route::get('/', [PortfolioController::class, 'index'])->name('portfolio');
+Route::post('/', [PortfolioController::class, 'contactStore'])->name('portfolio.contact.store');
 
 
-Route::get('/test', function () {
-    // return Config::set('auth.password_timeout', false);
-    // Session::put('lock-screen', auth()->user()->email);
+// Route::get('/test', function () {
+//     // return Config::set('auth.password_timeout', false);
+//     // Session::put('lock-screen', auth()->user()->email);
 
-    // Session::put('lock-screen', 'hello');
-    // return  Session::get('lock-screen');
-    Session::forget('lock-screen');
-});
+//     // Session::put('lock-screen', 'hello');
+//     // return  Session::get('lock-screen');
+//     Session::forget('lock-screen');
+// });
 
 
 /**
@@ -292,6 +295,26 @@ Route::prefix('admin')->group(function () {
                 Route::put('/{portfolioService}/edit', [PortfolioServiceController::class, 'update'])->name('admin.portfolio.service.update');
                 Route::delete('/{portfolioService}/delete', [PortfolioServiceController::class, 'destroy'])->name('admin.portfolio.service.delete');
             }); //end portfolio expertise route group
+
+
+            /**
+             *
+             *
+             * ----------------------------------------------------------
+             *                   Service Management
+             * ----------------------------------------------------------
+             *
+             */
+            Route::prefix('/contact')->group(function () {
+                Route::get('/', [PortfolioContactController::class, 'index'])->name('admin.portfolio.contact.index');
+                Route::get('/create', [PortfolioContactController::class, 'create'])->name('admin.portfolio.contact.create');
+                Route::post('/create', [PortfolioContactController::class, 'store'])->name('admin.portfolio.contact.store');
+                Route::get('/{portfolioContact}', [PortfolioContactController::class, 'show'])->name('admin.portfolio.contact.show');
+                Route::get('/{portfolioContact}/edit', [PortfolioContactController::class, 'edit'])->name('admin.portfolio.contact.edit');
+                Route::put('/{portfolioContact}/edit', [PortfolioContactController::class, 'update'])->name('admin.portfolio.contact.update');
+                Route::delete('/{portfolioContact}/delete', [PortfolioContactController::class, 'destroy'])->name('admin.portfolio.contact.delete');
+            }); //end portfolio expertise route group
+
             /**
              *
              *

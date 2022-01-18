@@ -29,7 +29,7 @@
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     @foreach($settings as $group => $setting)
-                                    <a class="nav-link @if($group==$active) active @endif "
+                                    <a class="nav-link @if($group==$active) active @endif " data-bs-toggle="tab"
                                         id="nav-{{ \Illuminate\Support\Str::slug($group) }}-tab" data-toggle="tab"
                                         href="#{{ \Illuminate\Support\Str::slug($group) }}" role="tab"
                                         aria-controls="nav-{{ \Illuminate\Support\Str::slug($group) }}"

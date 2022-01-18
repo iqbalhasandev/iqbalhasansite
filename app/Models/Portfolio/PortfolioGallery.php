@@ -38,4 +38,15 @@ class PortfolioGallery extends Model
             return $this->select('group')->distinct()->pluck('group');
         });
     }
+
+
+    public function allDataByGroups()
+    {
+        $data = $this->all();
+        $groupData = [];
+        foreach ($data as $s) {
+            $groupData[$s->group][] = $s;
+        }
+        return $groupData;
+    }
 }

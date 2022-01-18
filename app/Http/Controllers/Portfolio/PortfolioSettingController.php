@@ -13,6 +13,8 @@ class PortfolioSettingController extends Controller
 {
     public function __construct()
     {
+        $this->middleware(['auth', 'permission:portfolio_management']);
+
         \config_set('theme.cdata', [
             'title' => 'Portfolio Setting Management',
             'description' => 'Portfolio Setting Management.',

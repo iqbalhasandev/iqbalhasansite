@@ -1,6 +1,9 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" data-scroll href="#header-area">Flexi</a>
+        <a class="navbar-brand" data-scroll href="{{ route('portfolio') }}">
+            <img class="img-fluid" src="{{ setting('site.logo')?storage_asset(setting('site.logo')):'' }}"
+                style="width: 220px;">
+        </a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -36,9 +39,6 @@
                     <a class="nav-link" href="#testimonials-area">Clients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#blog-area">Blog</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#contact-area">Contact</a>
                 </li>
             </ul>
@@ -50,73 +50,110 @@
                 </span>
             </button>
             <div class="about-me">
-                <img class="img-fluid img-thumbnail d-block mx-auto avatar" src="img/sidebar-avatar.jpg" alt="About me">
+                <img class="img-fluid img-thumbnail d-block mx-auto avatar"
+                    src="{{ portfolio_setting('about_us.mobile_menu_image')?storage_asset(portfolio_setting('about_us.mobile_menu_image')):portfolio_asset('img/sidebar-avatar.jpg') }}"
+                    alt="About me">
                 <address>
                     <ul class="list-unstyled">
+                        @if (portfolio_setting('about_us.name'))
                         <li>
                             <span>Name</span>
-                            <p>Daniel Smith</p>
+                            <p>{{ portfolio_setting('about_us.name') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.curriculum_vita'))
                         <li>
-                            <span>Curriculum Vitae</span>
-                            <p><a href="#0">Download CV</a></p>
+                            <span>Curriculum Vita</span>
+                            <p><a href="{{ storage_asset(portfolio_setting('about_us.curriculum_vita')) }}">Download
+                                    CV</a></p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.skills'))
                         <li>
                             <span>Skills</span>
-                            <p>Photoshop, JavaScript, PHP, HTML/CSS, Python, Node.js</p>
+                            <p>{{ portfolio_setting('about_us.skills') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.email'))
                         <li>
                             <span>Email</span>
-                            <p><a href="mailto:daniel@example.com">daniel@example.com</a></p>
+                            <p><a href="mailto:{{ portfolio_setting('about_us.email') }}">{{
+                                    portfolio_setting('about_us.email') }}</a>
+                            </p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.address'))
                         <li>
                             <span>Address</span>
-                            <p>4155 Mann Island, Liverpool L3, United Kingdom.</p>
+                            <p>{{ portfolio_setting('about_us.address') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.age'))
                         <li>
                             <span>Age</span>
-                            <p>21</p>
+                            <p>{{ portfolio_setting('about_us.age') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.birth_date'))
                         <li>
                             <span>Date of Birth</span>
-                            <p>24 September 1996</p>
+                            <p>{{ portfolio_setting('about_us.birth_date') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.phone'))
                         <li>
                             <span>Phone</span>
-                            <p><a href="tel:+441632967704">+44 1632 967704</a></p>
+                            <p><a href="tel:{{ portfolio_setting('about_us.phone') }}">{{
+                                    portfolio_setting('about_us.phone') }}</a>
+                            </p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.residence'))
                         <li>
                             <span>Residence</span>
-                            <p>UK</p>
+                            <p>{{ portfolio_setting('about_us.residence') }}</p>
                         </li>
+                        @endif
+                        @if (portfolio_setting('about_us.freelance_status'))
                         <li>
                             <span>Freelance Status</span>
-                            <p>Available</p>
+                            <p>{{ portfolio_setting('about_us.freelance_status') }}</p>
                         </li>
+                        @endif
                     </ul>
                 </address>
                 <div class="social-medias">
-                    <a href="#0">
+
+                    @if (setting('social.twitter'))
+                    <a href="{{ setting('social.twitter') }}" target="_blank">
                         <i class="icon ion-logo-twitter"></i>
                     </a>
-                    <a href="#0">
+                    @endif
+                    @if (setting('social.instagram'))
+                    <a href="{{ setting('social.instagram') }}" target="_blank">
                         <i class="icon ion-logo-instagram"></i>
                     </a>
-                    <a href="#0">
+                    @endif
+                    @if (setting('social.linkedin'))
+                    <a href="{{ setting('social.linkedin') }}" target="_blank">
                         <i class="icon ion-logo-linkedin"></i>
                     </a>
-                    <a href="#0">
+                    @endif
+                    @if (setting('social.youtube'))
+                    <a href="{{ setting('social.youtube') }}" target="_blank">
                         <i class="icon ion-logo-youtube"></i>
                     </a>
-                    <a href="#0">
+                    @endif
+                    @if (setting('social.github'))
+                    <a href="{{ setting('social.github') }}" target="_blank">
                         <i class="icon ion-logo-github"></i>
                     </a>
-                    <a href="#0">
+                    @endif
+                    @if (setting('social.facebook'))
+                    <a href="{{ setting('social.facebook') }}" target="_blank">
                         <i class="icon ion-logo-facebook"></i>
                     </a>
-                    <a href="#0">
-                        <i class="icon ion-logo-dribbble"></i>
-                    </a>
+                    @endif
                 </div>
             </div>
         </div>

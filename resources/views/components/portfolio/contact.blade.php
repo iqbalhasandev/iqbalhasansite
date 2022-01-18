@@ -1,3 +1,6 @@
+@php
+$portfolioContact=new App\Models\Portfolio\PortfolioContact;
+@endphp
 <!--=====================================================
         -------------  Contact Area Start-------------
     ========================================================-->
@@ -13,30 +16,39 @@
     <div class="contact-Otherdetails">
         <div class="container">
             <div class="contact-details">
-                <h5 class="section-subHead mb-4"> Get in Touch</h5>
+                {{-- <h5 class="section-subHead mb-4"> Get in Touch</h5> --}}
                 <div class="row">
+                    @if (portfolio_setting('about_us.address') )
+
                     <div class="col-md-4 col-lg-4">
                         <div class="contact-details--panel b-box p-4 text-center wow fadeInUp" data-wow-duration="1.5s">
                             <div class="mb-4 contact-details--icon ">
                                 <i class="fas fa-map-marked-alt"></i>
                             </div>
                             <div class="mt-2">
-                                <a href="#" class="">144 Mangan St, Miami, FL</a>
+                                <a href="javascript:void()" class="">{{ portfolio_setting('about_us.address') }}</a>
                                 <p class="mt-3 font-weight-bold ">Address</p>
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @if (portfolio_setting('about_us.phone'))
+
                     <div class="col-md-4 col-lg-4">
                         <div class="contact-details--panel b-box p-4 text-center wow fadeInUp" data-wow-duration="1.5s">
                             <div class="mb-4 contact-details--icon ">
                                 <i class="fas fa-mobile-alt  "></i>
                             </div>
                             <div class="mt-2">
-                                <a href="tel:9876543210" class="">+987 654 3210</a>
+                                <a href="tel:{{ portfolio_setting('about_us.phone') }}">{{
+                                    portfolio_setting('about_us.phone') }}</a>
                                 <p class="mt-3 font-weight-bold ">Call Us</p>
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @if (portfolio_setting('about_us.email'))
+
                     <div class="col-md-4 col-lg-4">
                         <div class="contact-details--panel b-box p-4 text-center wow fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay=".2s">
@@ -44,20 +56,22 @@
                                 <i class="fas fa-envelope  "></i>
                             </div>
                             <div class="mt-2">
-                                <a href="mailto:hello@beingeorge.com">hello@beingeorge.com</a>
+                                <a href="mailto:{{ portfolio_setting('about_us.email') }}">{{
+                                    portfolio_setting('about_us.email') }}</a>
                                 <p class="mt-3 font-weight-bold ">Email Us</p>
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="contact-form mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title section-subHead mb-4"> Contact Form</h5>
+                        {{-- <h5 class="card-title section-subHead mb-4"> Contact Form</h5> --}}
 
                         <div id="contact-nav">
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link contact-nav-link active  my-1" id="pills-sales-tab"
                                         data-toggle="pill" href="#pills-sales" role="tab" aria-controls="pills-sales"
@@ -88,38 +102,46 @@
                             <!-- sales -->
                             <div class="tab-pane fade show active" id="pills-sales" role="tabpanel"
                                 aria-labelledby="pills-sales-tab">
-                                <form method="post" action="php/contact.php" id="contactForm" data-toggle="validator">
+                                <form method="POST" action="{{ route('portfolio.contact.store') }}" id="contactForm"
+                                    enctype="multipart/form-data" data-toggle="validator">
+                                    @csrf
+                                    <input type="hidden" name="type" value="Pre-Sales">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">Which product we can help you with? <span
+                                                <label for=product"">Which product we can help you with? <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="" id="">
-                                                    <option selected="selected">
-                                                        Select Plugin
+                                                <select class="form-control b-box" name="product" id="product" required>
+                                                    <option selected="selected" disabled>
+                                                        Select Product
                                                     </option>
+                                                    @foreach ($portfolioContact->products() as $g)
+                                                    <option>{{ $g }}
+                                                    </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">First Name <span class="text-danger">*</span></label>
+                                                <label for="name">First Name <span class="text-danger">*</span></label>
                                                 <input name="name" id="name" type="text" class="form-control b-box"
                                                     placeholder="Your Name *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">Email <span class="text-danger">*</span></label>
+                                                <label for="email">Email <span class="text-danger">*</span></label>
                                                 <input name="email" id="email" type="email" class="form-control b-box"
                                                     placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="">Message <span class="text-danger">*</span></label>
-                                                <textarea name="comments" id="comments" rows="4"
-                                                    class="form-control b-box" placeholder="Your message..."></textarea>
+                                                <label for="message">Message <span class="text-danger">*</span></label>
+                                                <textarea name="message" id="message" rows="4"
+                                                    class="form-control b-box" placeholder="Your message..."
+                                                    required></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -136,89 +158,85 @@
                             <!-- proposal -->
                             <div class="tab-pane fade" id="pills-proposal" role="tabpanel"
                                 aria-labelledby="pills-proposal-tab">
-                                <form method="post" action="php/contact.php" id="contactForm" data-toggle="validator">
+                                <form method="POST" action="{{ route('portfolio.contact.store') }}" id="contactForm"
+                                    enctype="multipart/form-data" data-toggle="validator">
+                                    @csrf
+                                    <input type="hidden" name="type" value="Project Proposal">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">Expected Project Delivery Time Frame <span
+                                                <label for="delivery_time">Expected Project Delivery Time Frame <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="" id="">
-                                                    <option value="null" selected="selected">—
+                                                <select class="form-control b-box" name="delivery_time"
+                                                    id="delivery_time" required>
+                                                    <option disabled selected="selected">—
                                                         Select —
                                                     </option>
-                                                    <option value="">1 - 3 weeks
-                                                    </option>
-                                                    <option value="">1 Month</option>
-                                                    <option value="">1 - 3 Months
-                                                    </option>
-                                                    <option value="">3 Months+</option>
+                                                    @foreach ($portfolioContact->deliveryTimes() as $g)
+                                                    <option>{{
+                                                        $g }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">What type of project you want to be developed? <span
-                                                        class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="" id="">
-                                                    <option value="null" selected="selected">—
+                                                <label for="development_time">What type of project you want to be
+                                                    developed? <span class="text-danger">*</span></label>
+                                                <select class="form-control b-box" name="development_time"
+                                                    id="development_time" required>
+                                                    <option disabled selected="selected">—
                                                         Select —
                                                     </option>
-                                                    <option value="">1 - 3 weeks
-                                                    </option>
-                                                    <option value="">1 Month</option>
-                                                    <option value="">1 - 3 Months
-                                                    </option>
-                                                    <option value="">3 Months+</option>
+                                                    @foreach ($portfolioContact->developmentTimes() as $g)
+                                                    <option>{{ $g }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="">What is your approximate budget look like? <span
+                                                <label for="budget">What is your approximate budget look like? <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="" id="">
-                                                    <option value="null" selected="selected">—
+                                                <select class="form-control b-box" name="budget" id="budget" required>
+                                                    <option disabled selected="selected">—
                                                         Select —
                                                     </option>
-                                                    <option value="">1 - 3 weeks
-                                                    </option>
-                                                    <option value="">1 Month</option>
-                                                    <option value="">1 - 3 Months
-                                                    </option>
-                                                    <option value="">3 Months+</option>
+                                                    @foreach ($portfolioContact->budgets() as $g)
+                                                    <option>{{ $g }} </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for=""> Name <span class="text-danger">*</span></label>
+                                                <label for="name"> Name <span class="text-danger">*</span></label>
                                                 <input name="name" id="name" type="text" class="form-control b-box"
                                                     placeholder="Your Name *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">Email <span class="text-danger">*</span></label>
+                                                <label for="email">Email <span class="text-danger">*</span></label>
                                                 <input name="email" id="email" type="email" class="form-control b-box"
                                                     placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="">Project Descriptions <span
+                                                <label for="project_description">Project Descriptions <span
                                                         class="text-danger">*</span></label>
-                                                <textarea name="comments" id="comments" rows="4"
+                                                <textarea name="project_description" id="project_description" rows="4"
                                                     class="form-control b-box"
-                                                    placeholder="Your Project Descriptions..."></textarea>
+                                                    placeholder="Your Project Descriptions..." required></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-3">
-                                            <label for=""> Already have a doc about your project?
+                                            <label for="file"> Already have a doc/pdf/image about your project?
                                                 <span class="text-danger">*</span></label>
-                                            <input name="name" id="name" type="file" class="form-control b-box"
-                                                required>
+                                            <input name="file" id="file" type="file" class="form-control b-box">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -234,7 +252,10 @@
                             <!-- others -->
                             <div class="tab-pane fade" id="pills-others" role="tabpanel"
                                 aria-labelledby="pills-others-tab">
-                                <form method="post" action="php/contact.php" id="contactForm" data-toggle="validator">
+                                <form method="POST" action="{{ route('portfolio.contact.store') }}" id="contactForm"
+                                    enctype="multipart/form-data" data-toggle="validator">
+                                    @csrf
+                                    <input type="hidden" name="type" value="Others">
                                     <div class="row">
 
                                         <div class="col-lg-6">
@@ -262,7 +283,8 @@
                                             <div class="form-group mb-3">
                                                 <label for="">Message <span class="text-danger">*</span></label>
                                                 <textarea name="comments" id="comments" rows="4"
-                                                    class="form-control b-box" placeholder="Your message..."></textarea>
+                                                    class="form-control b-box" placeholder="Your message..."
+                                                    required></textarea>
                                             </div>
                                         </div>
                                     </div>

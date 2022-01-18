@@ -108,6 +108,12 @@
                     <span></span>
                     <span>Testimonial Managment</span>
                 </x-admin-nav-link>
+                {{-- Testimonial--}}
+                <x-admin-nav-link href="{{ route('admin.portfolio.contact.index') }}">
+                    <i class="fab fa-facebook-messenger"></i>
+                    <span></span>
+                    <span>Contact Managment</span>
+                </x-admin-nav-link>
                 {{-- Setting--}}
                 <x-admin-nav-link href="{{ route('admin.portfolio.settings.index') }}">
                     <i class="fas fa-cog"></i>
