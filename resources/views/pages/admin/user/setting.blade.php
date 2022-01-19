@@ -20,12 +20,14 @@
                     <h4 class="">{{ config('theme.cdata.title') }}</h4>
                 </div>
                 <div class="">
+                    @can('user_create')
                     @if (config('theme.cdata.add'))
                     <a href="{{ config('theme.cdata.add') }}"
                         class="btn btn-primary btn-rounded waves-effect waves-light">
                         <i class="far fa-plus-square"></i> Add New
                     </a>
                     @endif
+                    @endcan
 
                     @if (config('theme.cdata.back'))
                     <a href="{{ config('theme.cdata.back') }}"

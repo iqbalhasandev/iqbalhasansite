@@ -14,42 +14,45 @@
 <body>
     <!-- Begin page -->
     <div id="layout-wrapper">
+        <!-- vue page -->
+        <div id="vue-app">
+            <!-- start header -->
+            <x-admin.header />
+            <!-- end header -->
 
-        <!-- start header -->
-        <x-admin.header />
-        <!-- end header -->
-
-        <!-- start header -->
-        <x-admin.left-sidebar />
-        <!-- end header -->
+            <!-- start header -->
+            <x-admin.left-sidebar />
+            <!-- end header -->
 
 
-        <div class="main-content">
+            <div class=" main-content">
 
-            <div class="page-content">
-                <!-- start page title -->
-                {{ $breadcrumb??'' }}
-                <!-- end page title -->
+                <div class="page-content">
+                    <!-- start page title -->
+                    {{ $breadcrumb??'' }}
+                    <!-- end page title -->
 
-                <div class="container-fluid">
-                    <div class="page-content-wrapper">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                {{ $slot }}
+                    <div class="container-fluid">
+                        <div class="page-content-wrapper">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {{ $slot }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- container-fluid -->
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+
+                <!-- start footer -->
+                <x-admin.footer />
+                <!-- end footer -->
+
             </div>
-            <!-- End Page-content -->
-
-
-            <!-- start footer -->
-            <x-admin.footer />
-            <!-- end footer -->
-
+            <!--end  vue page -->
+            <!-- end main content-->
         </div>
-        <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->

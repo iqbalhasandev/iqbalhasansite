@@ -12,23 +12,27 @@
 
 
 <body class="authentication-bg bg-primary">
-    <div class="home-center">
+    <!-- vue page -->
+    <div class=" home-center">
         <div class="home-desc-center">
             <div class="container">
-                {{ $slot }}
+                <div id="vue-app">
+                    {{ $slot }}
+                </div>
+                <!-- end vue page -->
             </div>
 
 
         </div>
         <!-- End Log In page -->
-    </div>
-    {{-- scripts --}}
-    <x-admin.scripts />
+</body>
+{{-- scripts --}}
+<x-admin.scripts />
 
-    <x-fb-live-chat />
-    <x-toster-session />
-    <x-delete />
-    <x-google-translate />
+<x-fb-live-chat />
+<x-toster-session />
+<x-delete />
+<x-google-translate />
 </body>
 
 </html>

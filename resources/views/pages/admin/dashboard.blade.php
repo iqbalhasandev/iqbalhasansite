@@ -19,12 +19,19 @@
                 <div>
                     <h4 class="">{{ config('theme.cdata.title') }}</h4>
                 </div>
+                <div class="m-5">
+                    <date-time-component />
+                </div>
 
             </div>
         </x-slot>
 
         <div class="row">
+            <div class="col-md-8">
 
+            </div>
+            <div class="col-md-4">
+            </div>
         </div>
     </x-card>
 </x-app-layout>
