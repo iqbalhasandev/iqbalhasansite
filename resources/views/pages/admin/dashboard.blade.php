@@ -19,7 +19,7 @@
                 <div>
                     <h4 class="">{{ config('theme.cdata.title') }}</h4>
                 </div>
-                <div class="m-5">
+                <div class="mr-5 mb-5">
                     <date-time-component />
                 </div>
 
