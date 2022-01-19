@@ -12,8 +12,8 @@ class PageBuilderController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware(['permission:portfolio_management'])->except('view');
+        $this->middleware('auth')->except('show');
+        $this->middleware(['permission:portfolio_management'])->except('show');
 
         \config_set('theme.cdata', [
             'title' => 'Page Builder table',

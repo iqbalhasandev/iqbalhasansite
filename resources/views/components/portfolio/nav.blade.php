@@ -1,8 +1,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" data-scroll href="{{ route('portfolio') }}">
-            <img class="img-fluid" src="{{ setting('site.logo')?storage_asset(setting('site.logo')):'' }}"
-                style="width: 220px;">
+            <x-logo />
         </a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -40,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact-area">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
             </ul>
         </div>

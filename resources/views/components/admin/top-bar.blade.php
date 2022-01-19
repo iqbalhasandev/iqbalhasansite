@@ -83,8 +83,7 @@
     <div class="logo-box bg-white">
         <a href="index.html" class="logo text-center">
             <span class="logo-lg">
-                <img src="{{ admin_asset('images/logo-light.png') }}" alt="" height="24">
-                <!-- <span class="logo-lg-text-light">Upvex</span> -->
+                <x-logo type="light" />
             </span>
             <span class="logo-sm">
                 <!-- <span class="logo-sm-text-dark">X</span> -->

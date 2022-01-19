@@ -33,7 +33,8 @@ class RoleTableSeeder extends Seeder
             'user_delete',
             // Setting
             'setting_management',
-            'portfolio_management'
+            'portfolio_management',
+            'report_issue_management',
         ];
 
         $role = [

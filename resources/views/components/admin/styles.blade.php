@@ -16,5 +16,9 @@
     .swal2-confirm.btn.btn-primary {
         margin-right: 5px
     }
+
+    .text-left {
+        text-align: left !important;
+    }
 </style>
 @stack('extra-styles')

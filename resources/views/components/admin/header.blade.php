@@ -4,7 +4,7 @@
 
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ config('app.url') }}" class="logo logo-dark">
                     <span class="logo-sm">
                         <x-logo type="sm" />
                     </span>
@@ -13,7 +13,7 @@
                     </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="{{ config('app.url') }}" class="logo logo-light">
                     <span class="logo-sm">
                         <x-logo type="sm" />
                     </span>

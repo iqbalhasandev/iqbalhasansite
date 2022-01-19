@@ -12,7 +12,9 @@ use App\Models\Portfolio\PortfolioGallery;
 use App\Models\Portfolio\PortfolioService;
 use App\Models\Portfolio\PortfolioEducation;
 use App\Models\Portfolio\PortfolioExpertise;
+use App\Models\Portfolio\PortfolioFaq;
 use App\Models\Portfolio\PortfolioTestimonial;
+use App\Models\ReportIssue;
 
 class PortfolioController extends Controller
 {
@@ -93,21 +95,49 @@ class PortfolioController extends Controller
         Session::flash('success', 'Successfully Stored Your Contact Data.');
         return \view('portfolio.contact-success');
     }
-
-
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function privacyPolicy()
+    public function reportIssue()
     {
+        \config_set('theme.cdata', [
+            'title' => 'Report your Issue',
+            'description' => 'Report your Issue',
+
+        ]);
         // seo
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
-        $gallery = new PortfolioGallery;
-        return \view('portfolio.index');
+        return \view('portfolio.report');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function reportIssueStore(Request $request)
+    {
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'message' => ['required', 'string'],
+        ]);
+        // return $request->all();
+        $data = $request->all();
+        $data['file'] = \upload_file($request, 'file', 'portfolio-report-issue');
+        $reportIssue = ReportIssue::create($data);
+        $reportIssue->forgetCache();
+
+        // flash message
+
+        // flash message
+        Session::flash('success', 'Successfully Stored new Report Issue data.');
+        return \view('portfolio.report-success');
     }
 
     /**
@@ -117,23 +147,15 @@ class PortfolioController extends Controller
      */
     public function faq()
     {
+        \config_set('theme.cdata', [
+            'title' => 'What people ask ?',
+            'description' => 'what people ask?',
+
+        ]);
         // seo
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
-        $gallery = new PortfolioGallery;
-        return \view('portfolio.index');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function reportIssue()
-    {
-        // seo
-        $this->seo()->setTitle(config('theme.cdata.title'));
-        $this->seo()->setDescription(\config('theme.cdata.description'));
-        $gallery = new PortfolioGallery;
-        return \view('portfolio.index');
+        $portfolioFaq = PortfolioFaq::cacheData();
+        return \view('pages.admin.portfolio.faq.show', \compact('portfolioFaq'));
     }
 }

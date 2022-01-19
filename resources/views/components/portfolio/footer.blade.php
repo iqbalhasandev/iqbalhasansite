@@ -13,10 +13,11 @@
             <div class="col-12 col-md-3">
                 <h5 class="column-title">Information</h5>
                 <ul class="list-unstyled column-content">
-                    <li><a href="{{ route('portfolio.termsCondition') }}">Terms & Condition</a></li>
-                    <li><a href="{{ route('portfolio.privacyPolicy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ route('portfolio.page-builder.show','terms-condition') }}">Terms & Condition</a>
+                    </li>
+                    <li><a href="{{ route('portfolio.page-builder.show','privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('portfolio.faq') }}">FAQs</a></li>
-                    <li><a href="{{ route('portfolio.reportIssue') }}">Report an issue</a></li>
+                    <li><a href="{{ route('portfolio.report-issue') }}">Report an issue</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-3">
