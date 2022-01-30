@@ -35,6 +35,8 @@ class RoleTableSeeder extends Seeder
             'setting_management',
             'portfolio_management',
             'report_issue_management',
+            'short_link_edit',
+            'short_link_delete'
         ];
 
         $role = [

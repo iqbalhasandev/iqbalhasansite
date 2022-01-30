@@ -18,6 +18,9 @@ class Authenticate extends Middleware
             if ($request->session()->exists('lock-screen')) {
                 return route('admin.lock-screen.unlock.view');
             }
+
+
+
             return route('login');
         }
     }

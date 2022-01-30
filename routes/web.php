@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\ShortLinkController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LockScreenController;
@@ -45,6 +46,8 @@ Route::get('report-issue', [PortfolioController::class, 'reportIssue'])->name('p
 Route::post('report-issue', [PortfolioController::class, 'reportIssueStore'])->name('portfolio.report-issue.store');
 Route::get('page/{pageBuilder}', [PageBuilderController::class, 'show'])->name('portfolio.page-builder.show');
 
+//Short Link
+Route::get('s/{shortLink}', [ShortLinkController::class, 'redirect'])->name('short.link.redirect');
 
 // Route::get('/test', function () {
 //     // return Config::set('auth.password_timeout', false);
@@ -408,6 +411,22 @@ Route::prefix('admin')->group(function () {
             Route::put('/{reportIssue}/edit', [ReportIssueController::class, 'update'])->name('admin.report-issue.update');
             Route::delete('/{reportIssue}/delete', [ReportIssueController::class, 'destroy'])->name('admin.report-issue.delete');
         });
+        /**
+         *
+         *
+         * ----------------------------------------------------------
+         *                   short-link Management
+         * ----------------------------------------------------------
+         *
+         */
+        Route::prefix('short-link')->group(function () {
+            Route::get('/', [ShortLinkController::class, 'index'])->name('admin.short.link.index');
+            Route::get('/generate', [ShortLinkController::class, 'create'])->name('admin.short.link.create');
+            Route::post('/generate', [ShortLinkController::class, 'store'])->name('admin.short.link.store');
+            Route::get('/{shortLink}/edit', [ShortLinkController::class, 'edit'])->name('admin.short.link.edit');
+            Route::put('/{shortLink}/edit', [ShortLinkController::class, 'update'])->name('admin.short.link.update');
+            Route::delete('/{shortLink}/delete', [ShortLinkController::class, 'destroy'])->name('admin.short.link.delete');
+        }); //end short link route group
 
 
         /**
