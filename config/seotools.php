@@ -12,10 +12,10 @@ return [
         'defaults'       => [
             'title'        => env('APP_NAME', 'Laravel Project'), // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Wave Express is Courier Service, We Guarantee that your parcel will be delivered safely and in time. You, no doubt is our first priority and we ensure promised quality service. Let us come to you.', // set false to total remove
+            'description'  => 'iqbalhasan.dev is a portfolio and multipurpose website. This website will be used primarily as a portfolio of IQBAL HASAN and will be used for public blogging, open source packages, free tutorials and client management through several subdomains.', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [
-                'courier service', 'courier', 'parcel', 'package', 'delivery', 'bd', 'service'
+                'iqbal', 'hasan', 'dev', 'iqbalhasandev', 'iqbal hasan dev', 'iqbal hasan', 'iqbalhasan.dev', 'iqbalhasndev', 'web', 'developer', 'open source package', 'laravel', 'laravel developer', 'web designer', 'node js developer', 'vue js developer'
             ],
             'canonical'    => null, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => 'all', // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
@@ -24,10 +24,10 @@ return [
          * Webmaster tags are always added.
          */
         'webmaster_tags' => [
-            'google'    => null,
-            'bing'      => null,
+            'google'    => 'a-Xr6Dur7lfvJHXO3XtU-ufgUVosHLkcqh9xqJaJ4Yw',
+            'bing'      => '0769EA1BE7114D8AD839FC2AA5C35303',
             'alexa'     => null,
-            'pinterest' => null,
+            'pinterest' => '2f6a1f0b7ca951c6f9009e0d48e86998',
             'yandex'    => null,
             'norton'    => null,
         ],
@@ -40,9 +40,9 @@ return [
          */
         'defaults' => [
             'title'       => env('APP_NAME', 'Laravel Project'), // set false to total remove
-            'description' => 'Wave Express is Courier Service, We Guarantee that your parcel will be delivered safely and in time. You, no doubt is our first priority and we ensure promised quality service. Let us come to you.', // set false to total remove
+            'description' => 'iqbalhasan.dev is a portfolio and multipurpose website. This website will be used primarily as a portfolio of IQBAL HASAN and will be used for public blogging, open source packages, free tutorials and client management through several subdomains.', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
-            'type'        => 'Courier Service',
+            'type'        => 'Portfolio',
             'site_name'   => env('APP_NAME', 'Laravel Project'),
             'images'      => [
                 env('APP_URL') . 'admin-assets/images/logo-dark.png',
@@ -66,7 +66,7 @@ return [
          */
         'defaults' => [
             'title'       => env('APP_NAME', 'Laravel Project'), // set false to total remove
-            'description' => 'Wave Express is Courier Service, We Guarantee that your parcel will be delivered safely and in time. You, no doubt is our first priority and we ensure promised quality service. Let us come to you.', // set false to total remove
+            'description' => 'iqbalhasan.dev is a portfolio and multipurpose website. This website will be used primarily as a portfolio of IQBAL HASAN and will be used for public blogging, open source packages, free tutorials and client management through several subdomains.', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [
