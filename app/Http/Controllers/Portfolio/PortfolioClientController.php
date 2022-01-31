@@ -22,7 +22,7 @@ class PortfolioClientController extends Controller
         \config_set('theme.cdata', [
             'title' => 'Portfolio Client table',
             'model' => 'Portfolio Client',
-            'route-name-prefix' => 'portfolio.client',
+            'route-name-prefix' => 'admin.portfolio.client',
             'back' => \back_url(),
             'breadcrumb' => [
                 [

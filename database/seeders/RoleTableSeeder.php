@@ -31,6 +31,8 @@ class RoleTableSeeder extends Seeder
             'user_create',
             'user_edit',
             'user_delete',
+            // Bteb Result management
+            'bteb_result_management',
             // Setting
             'setting_management',
             'portfolio_management',

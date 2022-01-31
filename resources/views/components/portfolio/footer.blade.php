@@ -33,7 +33,8 @@
             </div>
             <div class="col-12 col-md-3">
                 <h2 class="brand-logo">
-                    <img class="img-fluid" src="{{ setting('site.logo')?storage_asset(setting('site.logo')):'' }}"
+                    <img class="img-fluid"
+                        src="{{ setting('site.logo_light')?storage_asset(setting('site.logo_light')):'' }}"
                         style="width: 220px;">
                 </h2>
                 <p class="brand-description">{{ portfolio_setting('about_us.details') }}</p>

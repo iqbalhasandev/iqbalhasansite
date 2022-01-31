@@ -41,7 +41,11 @@
                     <a class="nav-link" href="#contact-area">Contact</a>
                 </li>
                 <li class="nav-item">
+                    @guest
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    @else
+                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                    @endguest
                 </li>
             </ul>
         </div>

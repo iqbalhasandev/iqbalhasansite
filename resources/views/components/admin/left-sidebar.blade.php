@@ -60,6 +60,28 @@
                 </x-admin-nav-link>
                 @endcan
                 @endif
+
+
+
+
+                {{-----------------------------------------------------------
+                ---------------- BTEB Result Managment ---------------
+                -------------------------------------------------------------}}
+                @can('bteb_result_management')
+                {{--Users --}}
+                <x-admin-nav-link title="BTEB Result Mangment" />
+                {{-- Client --}}
+                <x-admin-nav-link href="{{ route('admin.bteb-result.index') }}">
+                    <i class="fas fas fa-city"></i>
+                    <span></span>
+                    <span>BTEB Result</span>
+                </x-admin-nav-link>
+                @endcan
+
+
+
+
+
                 {{-----------------------------------------------------------
                 ---------------- Portfolio Managment Start ---------------
                 -------------------------------------------------------------}}

@@ -1,8 +1,9 @@
+@props(['boxSize'=>'col-md-8 col-lg-6 col-xl-5'])
 <div class="home-center">
     <div class="home-desc-center">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="{!! $boxSize !!}">
                     <div class="card">
                         <div class="card-body">
                             <div class="px-2 py-3">

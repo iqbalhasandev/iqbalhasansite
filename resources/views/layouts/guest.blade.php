@@ -11,7 +11,7 @@
 </head>
 
 
-<body class="">
+<body {{ $attributes->merge(['class'=>'']) }}>
     <div class=" home-btn d-none d-sm-block">
         <a href="{{ back_url() }}" class="btn btn-info btn-rounded waves-effect waves-light">
             <i class="fas fa-reply"></i> Back
@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class="account-pages my-5 pt-5">
+    <div class="account-pages my-5 pt-5 ">
         <div class="container">
             <!-- vue page -->
             <div id="vue-app">

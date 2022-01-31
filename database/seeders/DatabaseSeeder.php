@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserStatusSeeder::class,
             RoleTableSeeder::class,
+            PortfolioSettingSeeder::class,
         ]);
 
         Artisan::call('optimize:clear');
