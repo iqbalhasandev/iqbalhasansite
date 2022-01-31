@@ -16,9 +16,8 @@
                     @if (setting('site.email'))
                     <em>
                         <strong>
-                            If you have any emergency, you can mail us <a href="mailto:{{ setting('site.email') }}">{{
-                                setting('site.email')
-                                }}
+                            If you have any emergency, you can mail us <a href="mailto:{{ setting('site.email') }}">
+                                {{setting('site.email')}}
                             </a>
                         </strong>
                     </em>
