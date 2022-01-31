@@ -157,7 +157,5 @@ class PortfolioController extends Controller
         $this->seo()->setDescription(\config('theme.cdata.description'));
         $portfolioFaq = PortfolioFaq::cacheData();
         return \view('pages.admin.portfolio.faq.show', \compact('portfolioFaq'));
-
-        return \redirect()
     }
 }
