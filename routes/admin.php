@@ -362,7 +362,7 @@ Route::domain(config('domain.admin'))->group(function () {
          *
          *
          * ----------------------------------------------------------
-         * Faq Management
+         * Report Issue Management
          * ----------------------------------------------------------
          *
          */

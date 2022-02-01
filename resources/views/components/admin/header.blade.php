@@ -39,6 +39,13 @@
         </div>
 
         <div class="d-flex">
+
+            <div class="pt-2 d-lg-inline-block">
+                <a href="javascript:void(0);">
+                    <span class="nav-link waves-effect" id="google_translate_element"></span>
+                </a>
+            </div>
+
             <div class="dropdown d-none d-lg-inline-block">
                 <button type="button" class="btn header-item toggle-search noti-icon waves-effect"
                     data-target="#search-wrap">
