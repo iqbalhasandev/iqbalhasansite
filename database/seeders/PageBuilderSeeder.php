@@ -943,7 +943,7 @@ class PageBuilderSeeder extends Seeder
                 'meta_keywords'      => $item['meta_keywords'],
                 'status'      => $item['status'],
                 'body'      => $item['body'],
-                'image'      => $item['end'],
+                'image'      => $item['image'],
             ]);
         }
     }

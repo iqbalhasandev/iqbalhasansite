@@ -38,6 +38,7 @@
                         style="width: 220px;">
                 </h2>
                 <p class="brand-description">{{ portfolio_setting('about_us.details') }}</p>
+                <x-visitor class="text-end mt-5 d-block text-right" />
             </div>
         </div>
         <div class="row mini-footer">
@@ -74,6 +75,9 @@
                 @endif
 
             </div>
+
+
+
             <p class="copyright-notice text-capitalize">Copyright © {{ date('Y') }} <a href="{{ config('app.url') }}"
                     target="_blank">IQBAL HASAN</a> reserved.</p>
         </div>

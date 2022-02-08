@@ -4,6 +4,7 @@
             <div class="col-sm-6">
                 {{ date('Y') }}
                 © {{ config('app.name') }}.
+                <x-visitor class="text-end d-block" />
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">

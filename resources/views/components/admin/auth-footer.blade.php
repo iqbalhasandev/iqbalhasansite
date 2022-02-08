@@ -1,4 +1,6 @@
 <footer {{ $attributes->merge(['class'=>'text-center']) }}>
+    <x-visitor />
+
     <div>
         {{ date('Y') }} © {{ config('app.name') }}.
     </div>

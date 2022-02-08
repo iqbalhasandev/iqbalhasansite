@@ -33,7 +33,12 @@ class Kernel extends HttpKernel
         // \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class, // Note: This middleware invokes "RemoveComments::class" before it runs.
         // \RenatoMarinho\LaravelPageSpeed\Middleware\DeferJavascript::class,
 
-
+        /**
+         *
+         * visitor counter
+         *
+         */
+        \App\Http\Middleware\VisitorCounterMiddleware::class,
 
 
 
