@@ -22,22 +22,24 @@
                 </ul>
                 <div class="shufflejs" id="shufflejs">
                     @foreach ($gallerys as $group=>$gallery)
+                    @foreach ($gallery as $g)
                     <div class="js-item col-6 col-lg-4" data-groups='["{{ $group }}"]'>
                         <div class="item-overlay">
-                            <img class="img-fluid" alt="Item" src="{{ $gallery->image_url}}">
+                            <img class="img-fluid" alt="Item" src="{{ $g->image_url()}}">
                             <div class="overlay-content">
-                                <h6 class="overlay-title">{{ $gallery->caption}}</h6>
                                 <div class="overlay-icons">
-                                    <a class="popup-item" href="{{ $gallery->image_url}}" data-lity>
+                                    {{-- <p class="overlay-title">{{ $g->caption}}</p> --}}
+                                    <a class="popup-item" href="{{ $g->image_url()}}" data-lity>
                                         <i class="icon ion-md-eye"></i>
                                     </a>
-                                    <a href="{{ $gallery->url }}">
+                                    <a href="{{ $g->url }}" target="blank">
                                         <i class="icon ion-md-link"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     @endforeach
 
 

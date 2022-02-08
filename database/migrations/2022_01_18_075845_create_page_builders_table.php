@@ -19,7 +19,7 @@ class CreatePageBuildersTable extends Migration
             $table->string('slug')->unique();
             $table->string('meta_keywords')->nullable();
             $table->boolean('status')->nullable();
-            $table->text('body')->nullable();
+            $table->longText('body')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

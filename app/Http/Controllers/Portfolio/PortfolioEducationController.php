@@ -21,7 +21,7 @@ class PortfolioEducationController extends Controller
         \config_set('theme.cdata', [
             'title' => 'Portfolio Education table',
             'model' => 'PortfolioEducation',
-            'route-name-prefix' => 'portfolio.education',
+            'route-name-prefix' => 'admin.portfolio.education',
             'back' => \back_url(),
             'breadcrumb' => [
                 [

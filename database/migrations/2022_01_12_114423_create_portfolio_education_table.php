@@ -16,7 +16,7 @@ class CreatePortfolioEducationTable extends Migration
         Schema::create('portfolio_education', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('start');
             $table->string('end')->default('Running');
             $table->timestamps();

@@ -32,10 +32,4 @@ Route::get('s/{shortLink}', [ShortLinkController::class, 'redirect'])->name('sho
 
 
 Route::get('/test', function () {
-    //     // return Config::set('auth.password_timeout', false);
-    //     // Session::put('lock-screen', auth()->user()->email);
-
-    //     // Session::put('lock-screen', 'hello');
-    //     // return  Session::get('lock-screen');
-    //     Session::forget('lock-screen');
 });

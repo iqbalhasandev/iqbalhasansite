@@ -16,4 +16,5 @@ yarn-error.log
 *.zip
 *.rar
 /public/admin-assets
-/public/font-page-assets
+/public/font-assets
+/public/portfolio-assets

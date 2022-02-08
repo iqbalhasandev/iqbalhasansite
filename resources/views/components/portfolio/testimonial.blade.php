@@ -14,12 +14,12 @@
         <div class="row mt-4">
             <div class="col-lg-12">
                 <div class="swiper-container swiper-testimony wow fadeInUp" data-wow-duration="1.5s">
-                    @foreach ($testimonials as $testimonial)
 
                     <div class="swiper-wrapper ">
+                        @foreach ($testimonials as $testimonial)
                         <div class="swiper-slide single-testimonials ">
                             <div class="single-testimonials-in text-center p-4 b-box mx-auto">
-                                <img src="{{  $testimonial->image_url()}}" alt="" class="mx-auto b-box">
+                                <img src="{{  $testimonial->image_url()}}" alt="" class="mx-auto b-box" width="90px">
                                 <p class="pt-2 mt-4 text-center">"{{ $testimonial->quote }}"</p>
                                 <span class="font-weight-bold mt-3 d-block">- {{ $testimonial->name }}</span>
                             </div>

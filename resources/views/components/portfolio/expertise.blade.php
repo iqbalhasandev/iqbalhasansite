@@ -25,15 +25,15 @@
                                 <div class="resume-list b-box p-4 ">
                                     <div class="row align-items-center">
                                         <div class="col-3 col-md-3 pb-3 pb-md-0">
-                                            {{ $expertises->name }}
+                                            {{ $expertise->name }}
                                         </div>
                                         <div class="col-md-5 pb-2 pb-md-0">
-                                            <h5 class="mb-3">{{ $expertises->title }}</h5>
-                                            <p>{{ $expertises->description }}</p>
+                                            <h5 class="mb-3">{{ $expertise->title }}</h5>
+                                            <p>{{ $expertise->description }}</p>
                                         </div>
                                         <div class="col-md-4 text-md-right">
                                             <h6 class="badge badge-primary">
-                                                {{ $expertises->start.' - '.$expertises->end }}
+                                                {{ $expertise->start.' - '.$expertise->end }}
                                             </h6>
                                         </div>
 

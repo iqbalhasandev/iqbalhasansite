@@ -20,6 +20,16 @@ class DatabaseSeeder extends Seeder
             UserStatusSeeder::class,
             RoleTableSeeder::class,
             PortfolioSettingSeeder::class,
+            SettingSeeder::class,
+            PortfolioEducationSeeder::class,
+            PortfolioExpertiseSeeder::class,
+            PortfolioSkillSeeder::class,
+            PortfolioFaqSeeder::class,
+            PortfolioGallerySeeder::class,
+            PortfolioClientSeeder::class,
+            PortfolioServiceSeeder::class,
+            PortfolioTestimonialSeeder::class,
+            PageBuilderSeeder::class,
         ]);
 
         Artisan::call('optimize:clear');
