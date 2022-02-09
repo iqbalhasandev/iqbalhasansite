@@ -1,4 +1,4 @@
-<script src="{{ asset('js/app.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @livewireScripts()
 <!-- JAVASCRIPT -->
 <script src="{{ admin_asset('libs/jquery/jquery.min.js') }}"></script>
