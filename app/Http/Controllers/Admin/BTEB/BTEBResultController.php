@@ -21,7 +21,7 @@ class BTEBResultController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth', 'permission:bteb_result_management'])->except(['show', 'resultCheck']);
+        $this->middleware(['auth', 'permission:bteb_result_management'])->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
 
         \config_set('theme.cdata', [
             'title' => 'BTEB Result table',
@@ -97,6 +97,8 @@ class BTEBResultController extends Controller
 
 
 
+
+
         return \view('pages.admin.bteb-result.create_edit');
     }
 
@@ -141,7 +143,7 @@ class BTEBResultController extends Controller
         foreach ($semesters as $semester) {
             if ($request->has($semester)) {
                 $request->validate([
-                    $semester => 'required|mimes:pdf',
+                    $semester => 'required|mimes:pdf,txt',
                 ]);
             }
         }
@@ -153,9 +155,14 @@ class BTEBResultController extends Controller
         $semesters = ['fourth_semester', 'fifth_semester', 'sixth_semester', 'seventh_semester', 'eighth_semester'];
         foreach ($semesters as $semester) {
             if ($request->has($semester)) {
-                $data[$semester] = $fileName = 'bteb-result/' . \rand(1000, 99999) . \rand(1000, 99999) . '.txt';
-                $pdf = new Pdf2text;
-                Storage::put($fileName, $pdf->decode($request->$semester));
+
+                if ($request->$semester->getClientOriginalExtension() == 'txt') {
+                    $data[$semester] = Storage::putFile('bteb-result', $request->$semester);
+                } else {
+                    $data[$semester] = $fileName = 'bteb-result/' . \rand(1000, 99999) . \rand(1000, 99999) . '.txt';
+                    $pdf = new Pdf2text;
+                    Storage::put($fileName, $pdf->decode($request->$semester));
+                }
                 if ($bTEBResult) Storage::delete($bTEBResult->$semester);
             }
         }
@@ -250,7 +257,7 @@ class BTEBResultController extends Controller
     {
         \config_set('theme.cdata', [
             'title' => 'BTEB Result Management System',
-            'description' => 'BTEB Result Management System.Check Your result easily.',
+            'description' => 'Diploma Engineering Result Management System. With this result management system you can easily see the results of the previous semester along with the current semester results.Check Your result easily.',
 
         ]);
         // seo
@@ -268,6 +275,14 @@ class BTEBResultController extends Controller
      */
     public function resultCheck(Request $request)
     {
+        \config_set('theme.cdata', [
+            'title' => 'BTEB Result Management System',
+            'description' => 'Diploma Engineering Result Management System. With this result management system you can easily see the results of the previous semester along with the current semester results.Check Your result easily.',
+
+        ]);
+        // seo
+        $this->seo()->setTitle(config('theme.cdata.title'));
+        $this->seo()->setDescription(\config('theme.cdata.description'));
 
         $request->validate([
             'session' => 'required',
@@ -281,6 +296,15 @@ class BTEBResultController extends Controller
 
     public function downloadResult(Request $request)
     {
+        \config_set('theme.cdata', [
+            'title' => 'BTEB Result Management System',
+            'description' => 'Diploma Engineering Result Management System. With this result management system you can easily see the results of the previous semester along with the current semester results.Check Your result easily.',
+
+        ]);
+        // seo
+        $this->seo()->setTitle(config('theme.cdata.title'));
+        $this->seo()->setDescription(\config('theme.cdata.description'));
+
         $request->validate([
             'session' => 'required',
             'roll' => 'required|integer',

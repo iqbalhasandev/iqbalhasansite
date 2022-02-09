@@ -100,6 +100,6 @@
     </x-card>
 
     @push('extra-scripts')
-    <script src="{{ admin_asset('js/user-status-update.js') }}"></script>
+    <script src="{{ admin_asset('js/user-status-update.min.js') }}"></script>
     @endpush
 </x-app-layout>

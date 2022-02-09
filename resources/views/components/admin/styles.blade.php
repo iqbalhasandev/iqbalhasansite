@@ -1,6 +1,6 @@
 @livewireStyles
 <!-- app css -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/app.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Bootstrap Css -->
 <link href="{{ admin_asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->

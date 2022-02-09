@@ -45,5 +45,5 @@
 
 @endif
 @push('extra-scripts')
-<script src="{{ admin_asset('js/img-src.js') }}"></script>
+<script src="{{ admin_asset('js/img-src.min.js') }}"></script>
 @endpush

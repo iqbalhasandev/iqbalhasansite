@@ -36,5 +36,5 @@
 <script src="{{ admin_asset('libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
 <!-- Datatable init js -->
-<script src="{{ admin_asset('js/pages/datatables.init.js') }}"></script>
+<script src="{{ admin_asset('js/pages/datatables.init.min.js') }}"></script>
 @endpush

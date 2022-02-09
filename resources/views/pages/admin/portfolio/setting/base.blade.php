@@ -497,6 +497,6 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.9.1/tinymce.min.js" referrerpolicy="origin">
     </script>
-    <script src="{{ admin_asset('js/settings.js') }}"></script>
+    <script src="{{ admin_asset('js/settings.min.js') }}"></script>
     @endpush
     </x-admin-layout>

@@ -18,6 +18,7 @@
                     <li><a href="{{ route('portfolio.page-builder.show','privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('portfolio.faq') }}">FAQs</a></li>
                     <li><a href="{{ route('portfolio.report-issue') }}">Report an issue</a></li>
+                    <li><a href="{{ route('bteb-result.show') }}">BTEB Result Managmen</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-3">

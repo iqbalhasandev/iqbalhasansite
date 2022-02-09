@@ -155,6 +155,6 @@
 
 
     <!-- init js -->
-    <script src="{{ admin_asset('js/pages/form-editor.init.js')}}"></script>
+    <script src="{{ admin_asset('js/pages/form-editor.init.min.js')}}"></script>
     @endpush
 </x-app-layout>

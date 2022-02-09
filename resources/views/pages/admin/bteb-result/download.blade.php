@@ -62,10 +62,13 @@
             <div class="mt-2">
                 <p class="text-muted">
                     <strong>N.B:</strong>
-                    All of the above information is analyzed by searching through our automatic algorithm system
-                    from PDF published by "BTEB" So any information can be wrong, the developer or this web site is
-                    not responsible for the wrong
-                    information.
+                    Diploma Engineering Result Management System is a programming "algorithm" based web application.
+                    This application finds the result according to the roll from the PDF published by "BTEB" but in
+                    some cases the application is not able to give the correct result, in those cases the
+                    <strong>
+                        the developer of the application or this web application is not responsible some cases the
+                        application is not able to give the correct result, in those cases the
+                    </strong>.
                 </p>
 
             </div>

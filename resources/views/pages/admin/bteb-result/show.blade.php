@@ -7,7 +7,7 @@
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p>Get Your Result Easily</p>
             </div>
-            <form enctype="multipart/form-data" action="{{ route('bteb-result.result') }}" method="POST"
+            <form enctype="multipart/form-data" action="{{ route('bteb-result.result') }}" method="GET"
                 class=" needs-validation text-left" novalidate>
                 @csrf
                 @if(config('theme.cdata.edit'))
@@ -42,7 +42,9 @@
 
                     <p class="mt-2 mb-2 text-muted">
                         <strong>Note</strong>
-                        this is a auto search report...
+                        Results are displayed using pdf searching algorithm. The result is shown by searching from the
+                        PDF published by "BTEB". The developer or this web site is not responsible for any
+                        misinformation.
                     </p>
                     <div class="col-md-12 mt-5">
                         <div class="form-group pt-1 pb-1 text-center">

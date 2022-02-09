@@ -15,13 +15,13 @@
 <link rel="stylesheet" href="{{admin_asset('libs/toastr/toastr.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/swiper.min.css')}}">
 <link rel="stylesheet" href="{{ portfolio_asset('css/owl.theme.default.min.css')}}">
-<link rel="stylesheet" href="{{ portfolio_asset('css/main.css')}}">
-<link rel="stylesheet" href="{{ portfolio_asset('css/custom.css')}}">
-<link rel="stylesheet" href="{{ portfolio_asset('css/colors/main-'.$color.'.css')}}" id="color-scheme">
+<link rel="stylesheet" href="{{ portfolio_asset('css/main.min.css')}}">
+<link rel="stylesheet" href="{{ portfolio_asset('css/custom.min.css')}}">
+<link rel="stylesheet" href="{{ portfolio_asset('css/colors/main-'.$color.'.min.css')}}" id="color-scheme">
 <link rel="stylesheet" href="{{ portfolio_asset('css/color.css')}}">
-<link rel="stylesheet" href="{{ portfolio_asset('css/variants/'.$design.'.css')}}">
+<link rel="stylesheet" href="{{ portfolio_asset('css/variants/'.$design.'.min.css')}}">
 
-<link rel="stylesheet" href="{{ portfolio_asset('css/variants/'.$variant.'.css')}}">
+<link rel="stylesheet" href="{{ portfolio_asset('css/variants/'.$variant.'.min.css')}}">
 <!--removeIf(delDemoTool)-->
 <!-- inject:demoToolCSS:css -->
 <link rel="stylesheet" href="{{ portfolio_asset('demo_tool/demo-tool.css')}}">

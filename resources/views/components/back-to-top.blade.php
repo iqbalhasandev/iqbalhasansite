@@ -6,5 +6,5 @@
         -------------  back to top  Start-------------
     ========================================================-->
 @push('extra-scripts')
-<script src="{{ portfolio_asset('js/backToTop.js') }}"></script>
+<script src="{{ portfolio_asset('js/backToTop.min.js') }}"></script>
 @endpush

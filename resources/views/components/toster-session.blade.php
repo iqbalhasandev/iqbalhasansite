@@ -24,5 +24,5 @@ if(!isset($errors)) $errors= new Illuminate\Support\ViewErrorBag;
 @endforeach
 @endif
 {{-- @push('extra-scripts') --}}
-<script src="{{admin_asset('js/tosterSession.js')}}"></script>
+<script src="{{admin_asset('js/tosterSession.min.js')}}"></script>
 {{-- @endpush --}}

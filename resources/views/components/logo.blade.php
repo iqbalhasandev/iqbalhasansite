@@ -5,14 +5,14 @@
     @switch($type)
     @case('sm')
     <img src="{{ setting('site.logo_sm')?storage_asset(setting('site.logo_sm')):admin_asset('images/logo-sm.png') }}"
-        alt="" height="28">
+        alt="" width="45px">
     @break
     @case('light')
     <img src="{{ setting('site.logo_light')?storage_asset(setting('site.logo_light')):admin_asset('images/logo-light.png') }}"
-        height="20">
+        width="160px">
     @break
     @default
     <img src="{{ setting('site.logo_dark')?storage_asset(setting('site.logo_dark')):admin_asset('images/logo-dark.png') }}"
-        height="20">
+        width="160px">
     @endswitch
     {{ $link?'</a>':''}}

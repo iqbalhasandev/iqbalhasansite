@@ -6,11 +6,14 @@
         <div class="tool-box">
             <h5 class="title">Colors:</h5>
             <ul class="list-inline color-switcher mb-0">
-                <li class="list-inline-item" style="background-color: #EE3158;" data-path="css/colors/main-redpink.css">
+                <li class="list-inline-item" style="background-color: #EE3158;"
+                    data-path="css/colors/main-redpink.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #007bff;" data-path="css/colors/main-blue.css">
+                <li class="list-inline-item" style="background-color: #007bff;"
+                    data-path="css/colors/main-blue.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #17a2b8;" data-path="css/colors/main-cyan.css">
+                <li class="list-inline-item" style="background-color: #17a2b8;"
+                    data-path="css/colors/main-cyan.min.css">
                 </li>
                 <li class="list-inline-item" style="background-color: #3365b0;"
                     data-path="css/colors/main-darkblue.css"></li>
@@ -18,23 +21,30 @@
                     data-path="css/colors/main-darkmagenta.css"></li>
                 <li class="list-inline-item" style="background-color: #c93e70;"
                     data-path="css/colors/main-darkpink.css"></li>
-                <li class="list-inline-item" style="background-color: #bf2a3d;" data-path="css/colors/main-darkred.css">
+                <li class="list-inline-item" style="background-color: #bf2a3d;"
+                    data-path="css/colors/main-darkred.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #28a745;" data-path="css/colors/main-green.css">
+                <li class="list-inline-item" style="background-color: #28a745;"
+                    data-path="css/colors/main-green.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #6610f2;" data-path="css/colors/main-indigo.css">
+                <li class="list-inline-item" style="background-color: #6610f2;"
+                    data-path="css/colors/main-indigo.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #fd7e14;" data-path="css/colors/main-orange.css">
+                <li class="list-inline-item" style="background-color: #fd7e14;"
+                    data-path="css/colors/main-orange.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #e83e8c;" data-path="css/colors/main-pink.css">
+                <li class="list-inline-item" style="background-color: #e83e8c;"
+                    data-path="css/colors/main-pink.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #6f42c1;" data-path="css/colors/main-purple.css">
+                <li class="list-inline-item" style="background-color: #6f42c1;"
+                    data-path="css/colors/main-purple.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #dc3545;" data-path="css/colors/main-red.css">
+                <li class="list-inline-item" style="background-color: #dc3545;" data-path="css/colors/main-red.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #20c997;" data-path="css/colors/main-teal.css">
+                <li class="list-inline-item" style="background-color: #20c997;"
+                    data-path="css/colors/main-teal.min.css">
                 </li>
-                <li class="list-inline-item" style="background-color: #333;" data-path="css/colors/main-dark.css">
+                <li class="list-inline-item" style="background-color: #333;" data-path="css/colors/main-dark.min.css">
                 </li>
                 <li class="list-inline-item" style="background-color: #78b230;"
                     data-path="css/colors/main-yellowgreen.css"></li>
@@ -42,7 +52,8 @@
                     data-path="css/colors/main-tangopink.css"></li>
                 <li class="list-inline-item" style="background-color: #6F73D2;"
                     data-path="css/colors/main-moodyblue.css"></li>
-                <li class="list-inline-item" style="background-color: #664C43;" data-path="css/colors/main-brown.css">
+                <li class="list-inline-item" style="background-color: #664C43;"
+                    data-path="css/colors/main-brown.min.css">
                 </li>
             </ul>
         </div>

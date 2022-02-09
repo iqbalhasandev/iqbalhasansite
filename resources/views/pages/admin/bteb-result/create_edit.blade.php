@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group pt-1 pb-1">
-                                <label for="sixth_semester" class="font-black">Fifth Semester Result</label>
+                                <label for="sixth_semester" class="font-black">Sixth Semester Result</label>
                                 <input type="file" class="form-control" name="sixth_semester" id="sixth_semester">
                                 @if (config('theme.cdata.edit') && $item->url('6th'))
                                 <a href="{{ $item->url('6th')}}" class="mt-1">View</a>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group pt-1 pb-1">
-                                <label for="seventh_semester" class="font-black">Fifth Semester Result</label>
+                                <label for="seventh_semester" class="font-black">Seventh Semester Result</label>
                                 <input type="file" class="form-control" name="seventh_semester" id="seventh_semester">
                                 @if (config('theme.cdata.edit') && $item->url('7th'))
                                 <a href="{{ $item->url('7th')}}" class="mt-1">View</a>
@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group pt-1 pb-1">
-                                <label for="eighth_semester" class="font-black">Fifth Semester Result</label>
+                                <label for="eighth_semester" class="font-black">Eighth Semester Result</label>
                                 <input type="file" class="form-control" name="eighth_semester" id="eighth_semester">
                                 @if (config('theme.cdata.edit') && $item->url('8th'))
                                 <a href="{{ $item->url('8th')}}" class="mt-1">View</a>
