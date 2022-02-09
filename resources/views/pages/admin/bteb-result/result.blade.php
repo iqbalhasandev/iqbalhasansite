@@ -57,8 +57,7 @@
                         This application finds the result according to the roll from the PDF published by "BTEB" but in
                         some cases the application is not able to give the correct result, in those cases the
                         <strong>
-                            the developer of the application or this web application is not responsible some cases the
-                            application is not able to give the correct result, in those cases the
+                            the developer of the application or this web application is not responsible.
                         </strong>.
                     </p>
 

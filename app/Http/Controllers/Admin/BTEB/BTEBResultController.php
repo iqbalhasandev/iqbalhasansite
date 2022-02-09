@@ -56,7 +56,7 @@ class BTEBResultController extends Controller
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
 
-        $collection = BTEBResult::cacheData();
+        $collection = BTEBResult::cacheDataQuery('sessionDesc', BTEBResult::orderByDesc('session')->get());
 
         return \view('pages.admin.bteb-result.index', \compact('collection'));
     }
@@ -263,8 +263,8 @@ class BTEBResultController extends Controller
         // seo
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
-
-        return \view('pages.admin.bteb-result.show');
+        $collection = BTEBResult::cacheDataQuery('sessionDesc', BTEBResult::orderByDesc('session')->get());
+        return \view('pages.admin.bteb-result.show', \compact('collection'));
     }
 
     /**

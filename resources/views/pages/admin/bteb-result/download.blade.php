@@ -18,7 +18,7 @@
         <div class="">
             <x-logo type="dark" />
             <br><br>
-            <img src="{{ admin_asset('images/bteb-logo.png') }}" width="250px">
+            <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px">
             <br>
             <p>BTEB RESULT MANAGMENT SYSTEM</p>
             <p class="text-primary">(Get Your Result Easily)</p>
@@ -66,8 +66,7 @@
                     This application finds the result according to the roll from the PDF published by "BTEB" but in
                     some cases the application is not able to give the correct result, in those cases the
                     <strong>
-                        the developer of the application or this web application is not responsible some cases the
-                        application is not able to give the correct result, in those cases the
+                        the developer of the application or this web application is not responsible.
                     </strong>.
                 </p>
 

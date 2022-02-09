@@ -14,6 +14,9 @@ class BTEBResult extends Model
     protected $fillable = ['session', 'fourth_semester', 'fifth_semester', 'sixth_semester', 'seventh_semester', 'eighth_semester'];
 
 
+    protected static $cacheKeys = [
+        'sessionDesc'
+    ];
     public function url($semester)
     {
         switch ($semester) {

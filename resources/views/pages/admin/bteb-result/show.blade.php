@@ -7,7 +7,7 @@
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p>Get Your Result Easily</p>
             </div>
-            <form enctype="multipart/form-data" action="{{ route('bteb-result.result') }}" method="GET"
+            <form enctype="multipart/form-data" action="{{ route('bteb-result.result') }}" method="POST"
                 class=" needs-validation text-left" novalidate>
                 @csrf
                 @if(config('theme.cdata.edit'))
@@ -29,7 +29,7 @@
                         <div class="form-group pt-1 pb-1">
                             <label for="session" class="font-black">Session</label>
                             <select name="session" id="session" class="form-control">
-                                @foreach (App\Models\Admin\BTEB\BTEBResult::cacheData() as $item)
+                                @foreach ($collection as $item)
                                 <option>{{ $item->session }}</option>
                                 @endforeach
                             </select>
@@ -43,8 +43,11 @@
                     <p class="mt-2 mb-2 text-muted">
                         <strong>Note</strong>
                         Results are displayed using pdf searching algorithm. The result is shown by searching from the
-                        PDF published by "BTEB". The developer or this web site is not responsible for any
-                        misinformation.
+                        PDF published by "BTEB". The
+                        <strong>
+                            developer or this web site is not responsible for any
+                            misinformation.
+                        </strong>
                     </p>
                     <div class="col-md-12 mt-5">
                         <div class="form-group pt-1 pb-1 text-center">
