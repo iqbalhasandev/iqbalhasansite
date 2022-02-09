@@ -1,8 +1,7 @@
 <x-guest-layout>
     <x-box-card box-size="col-md-8 col-lg-6 col-xl-6">
         <x-slot name="title">
-            <img src="{{ admin_asset('images/maintenance.png') }}" alt="" class="img-fluid mx-auto d-block"
-                style="max-height: 400px">
+            <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px">
             <div class="mt-5">
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p>Get Your Result Easily</p>

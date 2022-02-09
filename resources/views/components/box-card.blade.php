@@ -8,7 +8,9 @@
                         <div class="card-body">
                             <div class="px-2 py-3">
                                 <div class="text-center">
-                                    <x-logo type="dark" />
+                                    <a class="navbar-brand" href="{{ route('portfolio') }}">
+                                        <x-logo type="dark" />
+                                    </a>
                                     @isset($title){{ $title }} @endisset
                                 </div>
                                 {{ $slot }}

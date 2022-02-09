@@ -2,7 +2,7 @@
     <x-box-card box-size="col-md-11 col-lg-9 col-xl-9">
         <x-slot name="title">
             <div class="">
-                <img src="{{ admin_asset('images/bteb-logo.png') }}" width="250px">
+                <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px">
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p class="text-primary">(Get Your Result Easily)</p>
             </div>
