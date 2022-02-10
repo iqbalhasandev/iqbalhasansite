@@ -253,7 +253,7 @@ class BTEBResultController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
         \config_set('theme.cdata', [
             'title' => 'BTEB Result Management System',
@@ -263,6 +263,24 @@ class BTEBResultController extends Controller
         // seo
         $this->seo()->setTitle(config('theme.cdata.title'));
         $this->seo()->setDescription(\config('theme.cdata.description'));
+
+        if ($request->roll and $request->session()) {
+
+            $request->validate([
+                'session' => 'required',
+                'roll' => 'required|integer',
+            ]);
+            $results = $this->resultQuery($request);
+            if ($request->download) {
+                $results = $this->resultQuery($request);
+                $pdf = PDF::loadView('pages.admin.bteb-result.download', ['results' => $results]);
+                // return $pdf->download('BTEB-RESULTSHET.pdf');
+                return $pdf->stream('BTEB-RESULTSHET.pdf');
+            }
+
+            return \view('pages.admin.bteb-result.result', ['results' => $results, 'roll' => $request->roll, 'session' => $request->session]);
+        }
+
         $collection = BTEBResult::cacheDataQuery('sessionDesc', BTEBResult::orderByDesc('session')->get());
         return \view('pages.admin.bteb-result.show', \compact('collection'));
     }

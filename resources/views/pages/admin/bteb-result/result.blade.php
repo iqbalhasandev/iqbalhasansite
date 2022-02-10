@@ -2,15 +2,16 @@
     <x-box-card box-size="col-md-11 col-lg-9 col-xl-9">
         <x-slot name="title">
             <div class="">
-                <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px">
+                <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px"
+                    class="img-fluid mx-auto d-block">
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p class="text-primary">(Get Your Result Easily)</p>
             </div>
 
             <div class="text-right mb-5">
                 <div class="float-end">
-                    <a href="{{ route('bteb-result.result') }}" class="btn  btn-secondary">Search another</a>
-                    <a href="{{ route('bteb-result.result.download',['roll'=>$roll,'session'=>$session]) }}"
+                    <a href="{{ route('bteb-result.show') }}" class="btn  btn-secondary">Search another</a>
+                    <a href="{{ route('bteb-result.show',['roll'=>$roll,'session'=>$session,'download'=>true]) }}"
                         class="btn  btn-primary" target="_blank">
                         Download
                     </a>

@@ -109,9 +109,10 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for=product"">Which product we can help you with? <span
+                                                <label for="product1">Which product we can help you with? <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="product" id="product" required>
+                                                <select class="form-control b-box" name="product" id="product1"
+                                                    required>
                                                     <option selected="selected" disabled>
                                                         Select Product
                                                     </option>
@@ -124,22 +125,22 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="name">First Name <span class="text-danger">*</span></label>
-                                                <input name="name" id="name" type="text" class="form-control b-box"
+                                                <label for="name1">Name <span class="text-danger">*</span></label>
+                                                <input name="name" id="name1" type="text" class="form-control b-box"
                                                     placeholder="Your Name *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="email">Email <span class="text-danger">*</span></label>
-                                                <input name="email" id="email" type="email" class="form-control b-box"
+                                                <label for="email1">Email <span class="text-danger">*</span></label>
+                                                <input name="email" id="email1" type="email" class="form-control b-box"
                                                     placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="message">Message <span class="text-danger">*</span></label>
-                                                <textarea name="message" id="message" rows="4"
+                                                <label for="message1">Message <span class="text-danger">*</span></label>
+                                                <textarea name="message" id="message1" rows="4"
                                                     class="form-control b-box" placeholder="Your message..."
                                                     required></textarea>
                                             </div>
@@ -165,10 +166,10 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="delivery_time">Expected Project Delivery Time Frame <span
+                                                <label for="delivery_time2">Expected Project Delivery Time Frame <span
                                                         class="text-danger">*</span></label>
                                                 <select class="form-control b-box" name="delivery_time"
-                                                    id="delivery_time" required>
+                                                    id="delivery_time2" required>
                                                     <option disabled selected="selected">—
                                                         Select —
                                                     </option>
@@ -181,10 +182,10 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="development_time">What type of project you want to be
+                                                <label for="development_time2">What type of project you want to be
                                                     developed? <span class="text-danger">*</span></label>
                                                 <select class="form-control b-box" name="development_time"
-                                                    id="development_time" required>
+                                                    id="development_time2" required>
                                                     <option disabled selected="selected">—
                                                         Select —
                                                     </option>
@@ -196,9 +197,9 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="budget">What is your approximate budget look like? <span
+                                                <label for="budget2">What is your approximate budget look like? <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-control b-box" name="budget" id="budget" required>
+                                                <select class="form-control b-box" name="budget" id="budget2" required>
                                                     <option disabled selected="selected">—
                                                         Select —
                                                     </option>
@@ -210,23 +211,23 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="name"> Name <span class="text-danger">*</span></label>
-                                                <input name="name" id="name" type="text" class="form-control b-box"
+                                                <label for="name2"> Name <span class="text-danger">*</span></label>
+                                                <input name="name" id="name2" type="text" class="form-control b-box"
                                                     placeholder="Your Name *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="email">Email <span class="text-danger">*</span></label>
-                                                <input name="email" id="email" type="email" class="form-control b-box"
+                                                <label for="email2">Email <span class="text-danger">*</span></label>
+                                                <input name="email" id="email2" type="email" class="form-control b-box"
                                                     placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="project_description">Project Descriptions <span
+                                                <label for="project_description2">Project Descriptions <span
                                                         class="text-danger">*</span></label>
-                                                <textarea name="project_description" id="project_description" rows="4"
+                                                <textarea name="project_description" id="project_description2" rows="4"
                                                     class="form-control b-box"
                                                     placeholder="Your Project Descriptions..." required></textarea>
                                             </div>
@@ -234,9 +235,8 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-3">
-                                            <label for="file"> Already have a doc/pdf/image about your project?
-                                                <span class="text-danger">*</span></label>
-                                            <input name="file" id="file" type="file" class="form-control b-box">
+                                            <label for="file2"> Already have a doc/pdf/image about your project?</label>
+                                            <input name="file" id="file2" type="file" class="form-control b-box">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -260,29 +260,29 @@ $portfolioContact=new App\Models\Portfolio\PortfolioContact;
 
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">First Name <span class="text-danger">*</span></label>
-                                                <input name="name" id="name" type="text" class="form-control b-box"
+                                                <label for="name3">First Name <span class="text-danger">*</span></label>
+                                                <input name="name" id="name3" type="text" class="form-control b-box"
                                                     placeholder="Your Name *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group mb-3">
-                                                <label for="">Email <span class="text-danger">*</span></label>
-                                                <input name="email" id="email" type="email" class="form-control b-box"
+                                                <label for="email3">Email <span class="text-danger">*</span></label>
+                                                <input name="email" id="email3" type="email" class="form-control b-box"
                                                     placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="">Subject <span class="text-danger">*</span></label>
-                                                <input name="email" id="email" type="email" class="form-control b-box"
-                                                    placeholder="Your Subject *" required>
+                                                <label for="subject3">Subject <span class="text-danger">*</span></label>
+                                                <input type="text" name="subject" id="subject3"
+                                                    class="form-control b-box" placeholder="Your Subject *" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <label for="">Message <span class="text-danger">*</span></label>
-                                                <textarea name="comments" id="comments" rows="4"
+                                                <label for="message3">Message <span class="text-danger">*</span></label>
+                                                <textarea name="message" id="message3" rows="4"
                                                     class="form-control b-box" placeholder="Your message..."
                                                     required></textarea>
                                             </div>

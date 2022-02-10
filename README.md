@@ -1,9 +1,9 @@
 <p align="center">
 <a href="javascript:void();" target="_blank">
-<img src="resources\admin-assets\images\logo-big.png" width="400"></a>
+<img src="resources\assets\admin-assets\images\logo-dark.png" width="400"></a>
 </p>
 
-## About <a href="javascript:void();" target="_blank">Wave-Express</a>
+## About <a href="javascript:void();" target="_blank">IQBAL HASAN</a>
 
 Wave-Express is Courier Service, We Guarantee that your parcel will be delivered safely and in time. You, no doubt is our first priority and we ensure promised quality service. Let us come to you. Our courier partners will pick up from your door step.
 

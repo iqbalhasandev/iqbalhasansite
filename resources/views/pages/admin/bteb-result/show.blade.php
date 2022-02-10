@@ -1,24 +1,21 @@
 <x-guest-layout>
     <x-box-card box-size="col-md-8 col-lg-6 col-xl-6">
         <x-slot name="title">
-            <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px">
+            <img src="{{ admin_asset('images/bteb-logo.png') }}" style="width:200px" class="img-fluid mx-auto d-block">
             <div class="mt-5">
                 <h3>BTEB RESULT MANAGMENT SYSTEM</h3>
                 <p>Get Your Result Easily</p>
             </div>
-            <form enctype="multipart/form-data" action="{{ route('bteb-result.result') }}" method="POST"
+            <form enctype="multipart/form-data" action="{{ route('bteb-result.show') }}" method="GET"
                 class=" needs-validation text-left" novalidate>
-                @csrf
-                @if(config('theme.cdata.edit'))
-                @method('PUT')
-                @endif
+
                 <div class=" row">
 
                     <div class="col-md-12">
                         <div class="form-group pt-1 pb-1">
                             <label for="roll" class="font-black ">Roll</label>
                             <input type="number" class="form-control" name="roll" id="roll"
-                                placeholder="Enter Your Roll..." value="{{ isset($item)?$item->roll:old('roll') }}">
+                                placeholder="Enter Your Roll..." value="{{ request()->roll??'' }}">
                             @error('roll')
                             <p class="text-danger pt-2">{{ $message }}</p>
                             @enderror

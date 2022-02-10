@@ -15,7 +15,8 @@ class BTEBResult extends Model
 
 
     protected static $cacheKeys = [
-        'sessionDesc'
+        'sessionDesc',
+        'OnlySession'
     ];
     public function url($semester)
     {

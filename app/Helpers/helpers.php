@@ -183,6 +183,9 @@ if (!function_exists('back_url')) {
 
     function back_url()
     {
+        if (url()->previous() == url()->full()) {
+            return config('app.url');
+        }
         return  url()->previous();
     }
 }
