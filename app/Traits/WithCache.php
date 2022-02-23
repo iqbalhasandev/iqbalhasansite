@@ -9,14 +9,23 @@ trait WithCache
 
     // protected static $cacheKey = '';
 
+    protected static $oldKeys = [];
+
     /**
      *
      * Cache table Data
      */
     public static function cacheData($column = 'id')
     {
+
         return Cache::rememberForever(self::$cacheKey, function () use ($column) {
-            return static::orderBy($column, 'desc')->get();
+            $query = static::orderBy($column, 'desc');
+            if (isset(self::$cacheRelationshipKeys)) {
+                foreach (self::$cacheRelationshipKeys as $key => $model) {
+                    $query =  $query->with($key);
+                }
+            }
+            return $query->get();
         });
     }
 
@@ -27,7 +36,13 @@ trait WithCache
     public static function cacheDataASC($column = 'id')
     {
         return Cache::rememberForever(self::$cacheKey . '_latest_', function () use ($column) {
-            return static::orderBy($column, 'asc')->get();
+            $query = static::orderBy($column, 'asc')->get();
+            if (isset(self::$cacheRelationshipKeys)) {
+                foreach (self::$cacheRelationshipKeys as $key => $model) {
+                    $query =  $query->with($key);
+                }
+            }
+            return $query->get();
         });
     }
     /**
@@ -37,17 +52,29 @@ trait WithCache
     public static function cacheDataFirst()
     {
         return Cache::rememberForever(self::$cacheKey . '_first_', function () {
-            return static::first();
+            $query = new static;
+            if (isset(self::$cacheRelationshipKeys)) {
+                foreach (self::$cacheRelationshipKeys as $key => $model) {
+                    $query =  $query->with($key);
+                }
+            }
+            return $query->first();
         });
     }
     /**
      *
      * Cache table Last Data
      */
-    public static function cacheDataLast()
+    public static function cacheDataLast($column = 'id')
     {
-        return Cache::rememberForever(self::$cacheKey . '_last_', function () {
-            return static::last();
+        return Cache::rememberForever(self::$cacheKey . '_last_', function () use ($column) {
+            $query =  static::orderBy($column, 'desc');
+            if (isset(self::$cacheRelationshipKeys)) {
+                foreach (self::$cacheRelationshipKeys as $key => $model) {
+                    $query =  $query->with($key);
+                }
+            }
+            return $query->first();
         });
     }
 
@@ -74,6 +101,16 @@ trait WithCache
             }
         }
 
+        if (isset(self::$cacheRelationshipKeys)) {
+
+            foreach (self::$cacheRelationshipKeys as $key => $model) {
+                if (in_array($key, self::$oldKeys)) break;
+                \array_push(self::$oldKeys, $key);
+                $model::forgetCache();
+            }
+            self::$oldKeys = [];
+        }
+
         Cache::forget(self::$cacheKey);
         Cache::forget(self::$cacheKey . '_latest_');
         Cache::forget(self::$cacheKey . '_first_');
@@ -81,5 +118,24 @@ trait WithCache
         if ($cacheKey) {
             Cache::forget(self::$cacheKey . $cacheKey);
         }
+    }
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function ($data) {
+            $data->forgetCache();
+        });
+
+        static::updated(function ($data) {
+            $data->forgetCache();
+        });
+        static::deleted(function ($data) {
+            $data->forgetCache();
+        });
     }
 }

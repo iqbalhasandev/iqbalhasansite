@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\Portfolio\PortfolioController;
 use App\Http\Controllers\Portfolio\PageBuilderController;
 
@@ -19,4 +20,14 @@ Route::domain(config('domain.portfolio'))->group(function () {
     Route::get('report-issue', [PortfolioController::class, 'reportIssue'])->name('portfolio.report-issue');
     Route::post('report-issue', [PortfolioController::class, 'reportIssueStore'])->name('portfolio.report-issue.store');
     Route::get('page/{pageBuilder}', [PageBuilderController::class, 'show'])->name('portfolio.page-builder.show');
+});
+
+
+Route::domain(config('domain.www'))->group(function () {
+    Route::get('/', [PortfolioController::class, 'index']);
+    Route::post('/contact-submit', [PortfolioController::class, 'contactStore']);
+    Route::get('faq', [PortfolioController::class, 'faq']);
+    Route::get('report-issue', [PortfolioController::class, 'reportIssue']);
+    Route::post('report-issue', [PortfolioController::class, 'reportIssueStore']);
+    Route::get('page/{pageBuilder}', [PageBuilderController::class, 'show']);
 });

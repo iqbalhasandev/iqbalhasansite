@@ -10,4 +10,9 @@ class RedirectController extends Controller
     {
         return \redirect()->route('bteb-result.show');
     }
+
+    public function portfolioRedirect()
+    {
+        return redirect()->route('portfolio');
+    }
 }

@@ -1,9 +1,10 @@
 <li class="breadcrumb-item {{ $attributes['class'] }}">
-    @isset($attributes['class'])
+    @if(isset($attributes['class']) && $attributes['class'])
     {{ $slot }}
     @else
-    <a href="{{ $attributes['href']??'javascript: void(0);' }}">
+    <a href="{{ $attributes['href']?$attributes['href']:'javascript: void(0);' }}">
         {{ $slot }}
     </a>
-    @endisset
+    @endif
 </li>
+
