@@ -12,7 +12,7 @@ class ResultController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request)
+    public function searchIndividual(Request $request)
     {
         $request->validate([
             'roll' => 'required|numeric',
