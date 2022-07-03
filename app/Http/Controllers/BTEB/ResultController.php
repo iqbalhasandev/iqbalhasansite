@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BTEB;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ResultController extends Controller
 {
@@ -28,8 +29,6 @@ class ResultController extends Controller
                 $result = \App\Models\BTEB\SixSemesterResult::where('roll', $request->roll)->first();
                 break;
         }
-
-
         return \response($result, 200);
     }
 }
