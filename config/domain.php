@@ -10,4 +10,6 @@ return [
     'telescope' => 'telescope' . '.' . config('app.short_url'),
     'bteb' => 'bteb' . '.' . config('app.short_url'),
     'api' => 'api' . '.' . config('app.short_url'),
+
+
 ];
