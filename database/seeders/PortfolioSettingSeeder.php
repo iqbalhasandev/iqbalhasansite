@@ -72,7 +72,7 @@ class PortfolioSettingSeeder extends Seeder
             [
                 'display_name' => 'Image',
                 'key'        => 'about_us.image',
-                'value'        => \null,
+                'value'        => 'setting/uw1CKE8bPa1AzOkj3YTco5oyHVYre3Em04un5xC.jpg',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'image',
@@ -213,7 +213,7 @@ class PortfolioSettingSeeder extends Seeder
             [
                 'display_name' => 'Mobile Menu Image',
                 'key'        => 'about_us.mobile_menu_image',
-                'value'        => \null,
+                'value'        => 'setting/Ik7Z4QCDQS9bVBid3h0uhFOkJkGMCTNm0Lz74iKD.jpg',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'image',
@@ -224,7 +224,7 @@ class PortfolioSettingSeeder extends Seeder
             [
                 'display_name' => 'Curriculum Vita',
                 'key'        => 'about_us.curriculum_vita',
-                'value'        => \null,
+                'value'        => 'setting/ZQLLcghOQMvKvWHlajdvO9DPhHwFO9zSBK8GagKM.pdf',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'file',

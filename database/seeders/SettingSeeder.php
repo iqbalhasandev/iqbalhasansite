@@ -26,7 +26,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Title',
                 'key'        => 'site.title',
-                'value'        => '',
+                'value'        => 'IQBAL HASAN',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text',
@@ -36,7 +36,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Description',
                 'key'        => 'site.description',
-                'value'        => "",
+                'value'        => "iqbalhasan.dev is a portfolio and multipurpose website. This website will be used primarily as a portfolio of IQBAL HASAN and will be used for public blogging, open source packages, free tutorials and client management through several subdomains.",
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text_area',
@@ -46,7 +46,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Site Url',
                 'key'        => 'site.url',
-                'value'        => '',
+                'value'        => 'https://iqbalhasan.dev',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text',
@@ -56,7 +56,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Logo Small',
                 'key'        => 'site.logo_sm',
-                'value'        => \null,
+                'value'        => 'setting/c4MbQPJosb3g29aQa8bBtSYr7AaQ72YggoY2DK8G.png',
                 'details'      => '[]',
                 'note'      => "Default image size 120x61",
                 'type'         => 'image',
@@ -66,7 +66,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Logo Light',
                 'key'        => 'site.logo_light',
-                'value'        => \null,
+                'value'        => 'setting/Ax2YPbDLbhhbaef0N88qtRO1KUpXWW0Vd7nyqoPi.png',
                 'details'      => '[]',
                 'note'      => "Default image size 120x61",
                 'type'         => 'image',
@@ -76,7 +76,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Logo Dark',
                 'key'        => 'site.logo_dark',
-                'value'        => \null,
+                'value'        => 'setting/Z8XDiSfGPpadY5eSh3Ct3Umq34sgngP79CU3pjrx.png',
                 'details'      => '[]',
                 'note'      => "Default image size 120x61",
                 'type'         => 'image',
@@ -86,7 +86,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Logo White',
                 'key'        => 'site.logo.white',
-                'value'        => \null,
+                'value'        => 'setting/Ax2YPbDLbhhbaef0N88qtRO1KUpXWW0Vd7nyqoPi.png',
                 'details'      => '[]',
                 'note'      => "Default image size 120x61",
                 'type'         => 'image',
@@ -96,7 +96,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Favicon',
                 'key'        => 'site.favicon',
-                'value'        => \null,
+                'value'        => 'setting/c4MbQPJosb3g29aQa8bBtSYr7AaQ72YggoY2DK8G.png',
                 'details'      => '[]',
                 'note'      => "",
                 'type'         => 'image',
@@ -116,7 +116,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Phone',
                 'key'        => 'site.phn',
-                'value'        => "",
+                'value'        => "01762445377",
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text',
@@ -126,7 +126,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Email',
                 'key'        => 'site.email',
-                'value'        => "",
+                'value'        => "info@iqbalhasan.dev",
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text',
@@ -136,7 +136,7 @@ class SettingSeeder extends Seeder
             [
                 'display_name' => 'Address',
                 'key'        => 'site.address',
-                'value'        => "",
+                'value'        => "Rajshahi-6210, Bangladesh",
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'text',
