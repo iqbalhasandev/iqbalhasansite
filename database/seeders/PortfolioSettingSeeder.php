@@ -72,7 +72,7 @@ class PortfolioSettingSeeder extends Seeder
             [
                 'display_name' => 'Image',
                 'key'        => 'about_us.image',
-                'value'        => 'setting/uw1CKE8bPa1AzOkj3YTco5oyHVYre3Em04un5xC.jpg',
+                'value'        => 'setting/9uw1CKE8bPa1AzOkj3YTco5oyHVYre3Em04un5xC.jpg',
                 'details'      => '[]',
                 'note'      => \null,
                 'type'         => 'image',
