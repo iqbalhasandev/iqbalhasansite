@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\BTEB\BTEBResultController;
-use App\Http\Controllers\BTEB\ResultController;
-use App\Models\Admin\VisitorCounter;
 use Illuminate\Http\Request;
+use App\Models\Admin\VisitorCounter;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BTEB\ResultController;
+use App\Http\Controllers\Api\VisitorCounterController;
+use App\Http\Controllers\Admin\BTEB\BTEBResultController;
 
 /*
 |--------------------------------------------------------------------------
