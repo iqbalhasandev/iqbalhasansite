@@ -21,7 +21,7 @@ class VisitorCounter extends Model
     {
         return self::orderByDesc('id')->first()->id ?? 0;
     }
-    public static function newVisitor(): void
+    public static function newVisitor()
     {
         $visitor = self::create([
             'ip' => request()->ip(),
@@ -29,6 +29,7 @@ class VisitorCounter extends Model
         ]);
 
         $visitor->forgetCache();
+        return $visitor;
     }
 
     public static function uniqueVisitor(): void
