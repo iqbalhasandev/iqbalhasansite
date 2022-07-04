@@ -28,5 +28,6 @@ Route::domain(config('domain.api'))->group(function () {
 
     Route::prefix('bteb')->group(function () {
         Route::post('/get-result/individual', [ResultController::class, 'searchIndividual'])->name('bteb.result.search.individual');
+        Route::post('/get-result/group', [ResultController::class, 'searchGroup'])->name('bteb.result.search.group');
     });
 });

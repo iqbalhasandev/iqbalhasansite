@@ -255,6 +255,7 @@ class BTEBResultController extends Controller
      */
     public function show(Request $request)
     {
+        return \redirect('https://bteb.biplophossain.me/');
         \config_set('theme.cdata', [
             'title' => 'BTEB Result Management System',
             'description' => 'Diploma Engineering Result Management System. With this result management system you can easily see the results of the previous semester along with the current semester results.Check Your result easily.',
