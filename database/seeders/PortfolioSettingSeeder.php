@@ -203,7 +203,7 @@ class PortfolioSettingSeeder extends Seeder
             [
                 'display_name' => 'Button Scheme',
                 'key' => 'about_us.button',
-                'value' => '{"Download CV":"https://iqbalhasan.dev/storage/settingjTYMU9ftgVgIXy72pnKoJteK6ZSVhYXT6Xdj0cp5.pdf","Hire Me":"#contact-area"}',
+                'value' => '{"Download CV":"https://iqbalhasan.dev/storage/setting/jTYMU9ftgVgIXy72pnKoJteK6ZSVhYXT6Xdj0cp5.pdf","Hire Me":"#contact-area"}',
                 'details' => '{"language":"json"}',
                 'note'      => \null,
                 'type' => 'code_editor',

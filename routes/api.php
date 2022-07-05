@@ -30,6 +30,9 @@ Route::domain(config('domain.api'))->group(function () {
     Route::prefix('visitor')->group(function () {
         Route::get('/get', [VisitorCounterController::class, 'index'])->name('visitor.get');
         Route::get('/count', [VisitorCounterController::class, 'count'])->name('visitor.count');
+        Route::get('/count-unique-visitor', [VisitorCounterController::class, 'countUniqueVisitor'])->name('visitor.countUniqueVisitor');
+        Route::get('/count-unique-visitor-and-svg', [VisitorCounterController::class, 'countUniqueVisitorAndSvg'])->name('visitor.countUniqueVisitorAndSvg');
+        Route::get('/count-and-svg', [VisitorCounterController::class, 'countAndSvg'])->name('visitor.countAndSvg');
     });
 
     Route::prefix('bteb')->group(function () {
