@@ -17,7 +17,8 @@ class VisitorCounterMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        VisitorCounter::uniqueVisitor();
+        // VisitorCounter::uniqueVisitor();
+        VisitorCounter::newVisitor();
         return $next($request);
     }
 }
