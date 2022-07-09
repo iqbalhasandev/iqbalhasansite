@@ -8,6 +8,8 @@
     <x-favicon />
     {{-- style --}}
     <x-admin.styles />
+    {{-- google ads --}}
+    <x-google-ads />
 </head>
 
 
