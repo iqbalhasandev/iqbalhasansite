@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112" height="20" role="img"
-    aria-label="Profile views: {{$count}}">
-    <title>Profile views: {{$count}}</title>
+    aria-label="Total Visitor: {{$count}}">
+    <title>Total Visitor: {{$count}}</title>
     <linearGradient id="s" x2="0" y2="100%">
         <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
         <stop offset="1" stop-opacity=".1" />
@@ -16,8 +16,8 @@
     <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
         text-rendering="geometricPrecision" font-size="110">
         <text aria-hidden="true" x="400" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)"
-            textLength="">Profile views</text>
-        <text x="400" y="140" transform="scale(.1)" fill="#fff" textLength="">Profile views</text>
+            textLength="">Total Visitor</text>
+        <text x="400" y="140" transform="scale(.1)" fill="#fff" textLength="">Total Visitor</text>
         <text aria-hidden="true" x="950" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)"
             textLength="">{{$count}}</text>
         <text x="950" y="140" transform="scale(.1)" fill="#fff" textLength="">{{$count}}</text>
